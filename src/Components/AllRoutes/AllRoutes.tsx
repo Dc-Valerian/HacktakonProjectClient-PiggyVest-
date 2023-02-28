@@ -1,9 +1,26 @@
-import React from 'react'
+import React from "react";
+import { useRoutes } from "react-router-dom";
+import Login from "../Authen/Login/Login";
+import Register from "../Authen/Register/Register";
+import HomeScreen from "../HomeScreen/HomeScreen";
+
 
 const AllRoutes = () => {
-  return (
-    <div>AllRoutes</div>
-  )
-}
+	let element = useRoutes([
+		{
+			path: "/",
+			element: <HomeScreen/>
+		},
+		{
+			path: "/register",
+			element: <Register/>
+		},
+		{
+			path:"/login",
+			element:<Login/>
+		}
+	]);
+	return element;
+};
 
-export default AllRoutes
+export default AllRoutes;
