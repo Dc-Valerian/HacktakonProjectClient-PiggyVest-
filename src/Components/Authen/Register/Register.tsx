@@ -10,8 +10,8 @@ import blue from "../../Assets/blue.png"
 
 const Register = () => {
   return (
-    <div >
-      <Container>
+    <div>
+      <Container id='register'>
         <Wrapper>
           <Logo >
             <Img src={logo}/>
@@ -121,7 +121,7 @@ h5{
   margin: 0;
   margin-bottom: 5px;
   text-align: start;
-  color: grey;
+  color:gray;
 
 }
 
