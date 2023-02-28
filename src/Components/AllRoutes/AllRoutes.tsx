@@ -1,7 +1,7 @@
 import React from "react";
 import { useRoutes } from "react-router-dom";
-import Login from "../Authen/Login/Login";
-import Register from "../Authen/Register/Register";
+import Login from "../Auth/Login/Login";
+import Register from "../Auth/Register/Register";
 import HomeScreen from "../HomeScreen/HomeScreen";
 
 

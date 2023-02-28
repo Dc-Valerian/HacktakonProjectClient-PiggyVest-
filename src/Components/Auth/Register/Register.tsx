@@ -193,5 +193,6 @@ background-image: url(${blue}),url(${green}),url(${purple}), url(${pink});
 background-repeat: no-repeat;
 background-size: 15%;
 background-position: left -1% top -15%, right -7.5% top -1%, right -5% bottom -5% , left -8% bottom -5%;
-
+position: sticky;
+top: 0;
 `
