@@ -53,8 +53,7 @@ font-weight:500;
 cursor: pointer;
 transition: all 400ms;
 border: 1px solid black;
-box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-		rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
 
 :hover{
   background-color: ${(props)=>props.bcc};
@@ -115,4 +114,8 @@ height: 90px;
 justify-content: center;
 display: flex;
 align-items: center;
+box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+		rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+position: sticky;
+top: 1;
 `

@@ -4,6 +4,8 @@ import one from "../Assets/one.png"
 import two from "../Assets/two.png"
 import three from "../Assets/three.png"
 import four from "../Assets/four.png"
+import {AiFillApple} from "react-icons/ai"
+import {FaGooglePlay} from "react-icons/fa"
 
 const Hero = () => {
   return (
@@ -24,9 +26,15 @@ const Hero = () => {
             </Button>
             <ButtonHold>
               <Buttons>
-                Get on IPhone
+                <Icon>
+                  <AiFillApple/>
+                </Icon>
+                Get on iPhone
               </Buttons>
               <Buttons>
+                <Icon>
+                  <FaGooglePlay/>
+                </Icon>
                 Get on Android
               </Buttons>
             </ButtonHold>
@@ -44,29 +52,80 @@ const Hero = () => {
 }
 
 export default Hero
-const Four = styled.img``
+const Icon = styled.div`
+margin: 5px;
+height: 20px;
+font-size: 30px;
+justify-content: center;
+display: flex;
+align-items: center;
+color: black;
+`
 
-const Three = styled.img``
+const Second = styled.div`
+position: relative;
+/* background-color: red; */
+width: 40%;
+height: 700px;
+display: flex;
+align-items: center;
+justify-content: center;
+`
+const Four = styled.img`
+position: absolute;
+z-index: 2;
+object-fit: cover;
+height: 80px;
+width: 250px;
+left: -150px;
+top: 250px;
+`
 
-const Two = styled.img``
+const Three = styled.img`
+position: absolute;
+height: 90px;
+width: 250px;
+z-index: 2;
+object-fit: cover;
+right:9%;
+bottom: 20%;
+`
 
-const One = styled.img``
+const Two = styled.img`
+position: absolute;
+
+`
+
+const One = styled.img`
+position: absolute;
+left: 1px;
+z-index: 1;
+
+`
+
 const Buttons = styled.div`
 margin: 5px;
 height: 50px;
-width:220px ;
-background-color: black;
-color: white;
+width:180px;
+background-color: white;
+color: black;
 justify-content: center;
 align-items: center;
 display: flex;
+font-size: 15px;
+border: 1px solid black;
+font-weight: 500;
+border-radius: 10px;
+cursor: pointer;
+outline: none;
+border: none;
 `
 
 const Button = styled.button`
 margin: 5px;
 height: 50px;
 width:220px ;
-background-color: black;
+background-color: #0C1825;
 color: white;
 display: flex;
 align-items: center;
@@ -79,8 +138,7 @@ font-weight:500;
 cursor: pointer;
 transition: all 400ms;
 border: 1px solid black;
-box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-		rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
 
 :hover{
   background-color: #0D5ED4;
@@ -92,13 +150,14 @@ box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
 
 const ButtonHold = styled.div`
 display: flex;
-justify-content: center;
-align-items: center;
+margin: 5px;
+
+
 `
 
 const Sub = styled.div`
 color: #5A3535;
-
+margin: 15px;
 `
 
 const Img = styled.img``
@@ -106,9 +165,9 @@ const Img = styled.img``
 const Title = styled.div`
 font-size: 60px;
 font-weight: bolder;
+color: #0C1825;
 `
 
-const Second = styled.div``
 
 const First = styled.div`
 display: flex;
@@ -116,11 +175,11 @@ flex-direction: column;
 `
 
 const Wrapper = styled.div`
-background-color: navajowhite;
+/* background-color: navajowhite; */
 display: flex;
 align-items: center;
 justify-content: space-around;
-width:80% ;
+width:90% ;
 `
 
 const Container = styled.div`
@@ -128,5 +187,5 @@ display: flex;
 justify-content: center;
 align-items: center;
 width: 100%;
-background-color: red;
+/* background-color: red; */
 `
