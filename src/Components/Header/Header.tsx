@@ -22,10 +22,10 @@ const Header = () => {
           </NavLink>
 
           <ButtonHold>
-            <Button bg="white" cl="black" wd="100px" bcc='whitesmoke' ccl='#0D5ED4' >
+            <Button to="login" bg="white" cl="black" wd="100px" bcc='whitesmoke' ccl='#0D5ED4' >
               Sign In
             </Button>
-             <Button bg="black" cl="white" wd="220px" bcc='#0D5ED4' ccl=''>
+             <Button to="register" bg="black" cl="white" wd="220px" bcc='#0D5ED4' ccl=''>
                Create Free Account
              </Button>
           </ButtonHold>
@@ -36,7 +36,7 @@ const Header = () => {
 }
 
 export default Header
-const Button = styled.div<{bg:string; cl:string; wd:string; bcc:string ;ccl:string}>`
+const Button = styled(Link)<{bg:string; cl:string; wd:string; bcc:string ;ccl:string}>`
 margin: 5px;
 height: 50px;
 width: ${(props)=>props.wd};
@@ -51,6 +51,7 @@ border: none;
 font-size: 20px;
 font-weight:500;
 cursor: pointer;
+text-decoration: none;
 transition: all 400ms;
 border: 1px solid black;
 

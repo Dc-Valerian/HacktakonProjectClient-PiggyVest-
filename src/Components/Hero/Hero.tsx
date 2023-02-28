@@ -6,11 +6,12 @@ import three from "../Assets/three.png"
 import four from "../Assets/four.png"
 import {AiFillApple} from "react-icons/ai"
 import {FaGooglePlay} from "react-icons/fa"
+import { Link } from 'react-router-dom'
 
 const Hero = () => {
   return (
     <div>
-      <Container>
+      <Container id='hero'>
         <Wrapper>
           <First>
             <Title>
@@ -21,7 +22,7 @@ const Hero = () => {
             <br />
              goals by helping them save and invest with ease.
             </Sub>
-            <Button>
+            <Button to ="register">
               Create Free Account
             </Button>
             <ButtonHold>
@@ -121,7 +122,7 @@ outline: none;
 border: none;
 `
 
-const Button = styled.button`
+const Button = styled(Link)`
 margin: 5px;
 height: 50px;
 width:220px ;
@@ -134,6 +135,7 @@ border-radius: 10px;
 outline: none;
 border: none;
 font-size: 20px;
+text-decoration: none;
 font-weight:500;
 cursor: pointer;
 transition: all 400ms;
