@@ -22,10 +22,10 @@ const Header = () => {
           </NavLink>
 
           <ButtonHold>
-            <Button bg="blue" cl="black">
+            <Button bg="white" cl="black" wd="100px" bcc='whitesmoke' ccl='#0D5ED4' >
               Sign In
             </Button>
-             <Button bg="black" cl="white">
+             <Button bg="black" cl="white" wd="220px" bcc='#0D5ED4' ccl=''>
                Create Free Account
              </Button>
           </ButtonHold>
@@ -36,12 +36,32 @@ const Header = () => {
 }
 
 export default Header
-const Button = styled.div<{bg:string; cl:string}>`
+const Button = styled.div<{bg:string; cl:string; wd:string; bcc:string ;ccl:string}>`
 margin: 5px;
-height: 40px;
-width: 120px;
+height: 50px;
+width: ${(props)=>props.wd};
 background-color:${(props)=>props.bg};
-color:${(props)=>props.cl}
+color:${(props)=>props.cl};
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 10px;
+outline: none;
+border: none;
+font-size: 20px;
+font-weight:500;
+cursor: pointer;
+transition: all 400ms;
+border: 1px solid black;
+box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+		rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+:hover{
+  background-color: ${(props)=>props.bcc};
+  border: 1px solid blue;
+  color: ${(props)=>props.ccl};
+  transform: scale(0.98);
+}
 `
 
 const ButtonHold = styled.div`
@@ -90,7 +110,7 @@ width: 90%;
 
 const Container = styled.div`
 width: 100%;
-background-color: red;
+/* background-color: red; */
 height: 90px;
 justify-content: center;
 display: flex;
