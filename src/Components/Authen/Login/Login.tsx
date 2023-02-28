@@ -11,7 +11,7 @@ import blue from "../../Assets/blue.png"
 const Register = () => {
   return (
     <div >
-      <Container id='login'>
+      <Container>
         <Wrapper>
           <Logo >
             <Img src={logo}/>
@@ -30,42 +30,17 @@ const Register = () => {
        <h5>Email Address</h5>
        <Input type="text"  placeholder='Email Address'/>
        </FormList>
-       <FormList>
-       <h5>Phone Number</h5>
-       <Input type="text"  placeholder='Phone Number'/>
-       </FormList>
-       <FormList>
-       <h5>Password</h5>
-       <Input type="password"  placeholder='Password' />
-       </FormList>
-       <FormList>
-       <h5>Referrer Phone or Promo Code(Optional)</h5>
-       <Input type="text"  placeholder='Referrer Phone or Promo Code'/>
-       </FormList>
-       <FormList>
-        <h5>How Did You Hear About Us?(Optional)</h5>
-        <select>
-          <option>Click to Select</option>
-          <option>Valerian Pedro</option>
-          <option>Twitter</option>
-          <option>Instagram</option>
-          <option>Friends/Family/Co Worker</option>
-          <option>Google Search</option>
-          <option>Google PlayStore</option>
-          <option>Online Blog</option>
-          <option>Local Newspaper</option>
-          <option>At an Event</option>
-          <option>others</option>
-        </select>
-       </FormList>
        <Button>
-        Create Account
+        Log IN
        </Button>
        </Form>
             </Wrap>
           </FormHold>
-          <Login to ="login">
-            Already have an Account? Log In
+          <Login to="register">
+            Don't Have an account? Register!
+          </Login>
+          <Login to="">
+            Forgot Password?
           </Login>
         </Wrapper>
       </Container>
@@ -189,9 +164,9 @@ align-items: center;
 background-color: #062863;
 width: 100%;
 padding: 10px 0px 10px 0px;
-background-image: url(${blue}),url(${green}),url(${purple});
+background-image: url(${blue}),url(${green}),url(${purple}), url(${pink});
 background-repeat: no-repeat;
 background-size: 15%;
-background-position: left -1% top -15%, right -7.5% top -1%, right -5% bottom -5% ;
+background-position: left -1% top -15%, right -7.5% top -6%, right -5% bottom -5% , left -8% bottom -5%;
 
 `
