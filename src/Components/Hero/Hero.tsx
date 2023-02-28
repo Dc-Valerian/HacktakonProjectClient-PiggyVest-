@@ -1,5 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import one from "../Assets/one.png"
+import two from "../Assets/two.png"
+import three from "../Assets/three.png"
+import four from "../Assets/four.png"
 
 const Hero = () => {
   return (
@@ -19,17 +23,19 @@ const Hero = () => {
               Create Free Account
             </Button>
             <ButtonHold>
-              <Button>
+              <Buttons>
                 Get on IPhone
-              </Button>
-              <Button>
+              </Buttons>
+              <Buttons>
                 Get on Android
-              </Button>
+              </Buttons>
             </ButtonHold>
           </First>
           <Second>
-            <Img/>
-            Image
+           <One src={one}/>
+           <Two src={two}/>
+           <Three src={three}/>
+           <Four src={four}/>
           </Second>
         </Wrapper>
       </Container>
@@ -38,12 +44,62 @@ const Hero = () => {
 }
 
 export default Hero
+const Four = styled.img``
 
-const Button = styled.button``
+const Three = styled.img``
 
-const ButtonHold = styled.div``
+const Two = styled.img``
 
-const Sub = styled.div``
+const One = styled.img``
+const Buttons = styled.div`
+margin: 5px;
+height: 50px;
+width:220px ;
+background-color: black;
+color: white;
+justify-content: center;
+align-items: center;
+display: flex;
+`
+
+const Button = styled.button`
+margin: 5px;
+height: 50px;
+width:220px ;
+background-color: black;
+color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 10px;
+outline: none;
+border: none;
+font-size: 20px;
+font-weight:500;
+cursor: pointer;
+transition: all 400ms;
+border: 1px solid black;
+box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+		rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+:hover{
+  background-color: #0D5ED4;
+  border: 1px solid blue;
+  color: white;
+  transform: scale(0.98);
+}
+`
+
+const ButtonHold = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+`
+
+const Sub = styled.div`
+color: #5A3535;
+
+`
 
 const Img = styled.img``
 
