@@ -10,9 +10,9 @@ import AllRoutes from './Components/AllRoutes/AllRoutes';
 function App() {
   return (
     <div>
-      <Header/>
+      {/* <Header/> */}
       <AllRoutes/>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 }
