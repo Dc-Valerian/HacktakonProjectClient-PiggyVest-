@@ -14,7 +14,7 @@ const Register = () => {
     <div >
       <Container >
         <Wrapper>
-          <Logo >
+          <Logo to="/">
             <Img src={logo}/>
           </Logo>
 
@@ -142,7 +142,7 @@ padding: 10px 0px 20px 0px;
 
 const Img = styled.img``
 
-const Logo = styled.div`
+const Logo = styled(Link)`
 cursor: pointer;
 margin-top: 20px;
 margin: 30px;

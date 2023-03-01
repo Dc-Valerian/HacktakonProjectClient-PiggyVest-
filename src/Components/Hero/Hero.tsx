@@ -7,6 +7,8 @@ import four from "../Assets/four.png"
 import {AiFillApple} from "react-icons/ai"
 import {FaGooglePlay} from "react-icons/fa"
 import { Link } from 'react-router-dom'
+import appleIcon from "../Assets/apple-icon.svg"
+import googleIcon from "../Assets/google-icon.svg"
 
 const Hero = () => {
   return (
@@ -28,13 +30,13 @@ const Hero = () => {
             <ButtonHold>
               <Buttons>
                 <Icon>
-                  <AiFillApple/>
+                  <img src={appleIcon}/>
                 </Icon>
                 Get on iPhone
               </Buttons>
               <Buttons>
                 <Icon>
-                  <FaGooglePlay/>
+                  <img src={googleIcon}/>
                 </Icon>
                 Get on Android
               </Buttons>
@@ -160,14 +162,20 @@ margin: 5px;
 const Sub = styled.div`
 color: #5A3535;
 margin: 15px;
+font-family: "DM Sans";
+vertical-align: baseline;
+text-decoration: none solid rgb(53,53,53);
+font-weight: 500;
+color: rgb(53,53,53);
 `
 
 const Img = styled.img``
 
 const Title = styled.div`
-font-size: 60px;
-font-weight: bolder;
-color: #0C1825;
+font-size: 4.6em;
+font-weight: 800;
+line-height: 70px;
+color:rgb(12,24,37);
 `
 
 
@@ -180,8 +188,9 @@ const Wrapper = styled.div`
 /* background-color: navajowhite; */
 display: flex;
 align-items: center;
-justify-content: space-around;
+justify-content: space-between;
 width:90% ;
+height: 100%;
 `
 
 const Container = styled.div`
