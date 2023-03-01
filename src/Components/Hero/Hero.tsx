@@ -9,6 +9,7 @@ import {FaGooglePlay} from "react-icons/fa"
 import { Link } from 'react-router-dom'
 import appleIcon from "../Assets/apple-icon.svg"
 import googleIcon from "../Assets/google-icon.svg"
+import nice from "../Assets/nice1.jpg"
 
 const Hero = () => {
   return (
@@ -43,7 +44,7 @@ const Hero = () => {
             </ButtonHold>
           </First>
           <Second>
-           <One src={one}/>
+           <One src={nice}/>
            <Two src={two}/>
            <Three src={three}/>
            <Four src={four}/>
@@ -96,13 +97,17 @@ bottom: 20%;
 
 const Two = styled.img`
 position: absolute;
-
+/* z-index: 3; */
 `
 
 const One = styled.img`
 position: absolute;
-left: 1px;
+left: 2px;
 z-index: 1;
+width: 68%;
+height: 78%;
+object-fit: cover;
+border-radius: 20px;
 
 `
 
