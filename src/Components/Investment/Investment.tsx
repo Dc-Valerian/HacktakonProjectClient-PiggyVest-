@@ -49,6 +49,7 @@ font-weight: 500;
 const Line  = styled.div`
 color: #7913E9;
 display: flex;
+width: 300px;
 /* justify-content: center; */
 align-items: center;
 margin: 5px;
@@ -59,6 +60,9 @@ cursor: pointer;
 
 :hover{
     color: rgb(247,240,255);
+    background-color: transparent;
+    background-color: whitesmoke;
+    transition: all 650ms;
 }
 `
 
@@ -117,4 +121,5 @@ justify-content: center;
 align-items: center;
 margin-top: 100px;
 width: 100%;
+margin-bottom: 200px;
 `
