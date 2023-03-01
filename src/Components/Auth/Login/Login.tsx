@@ -9,9 +9,10 @@ import blue from "../../Assets/blue.png"
 
 
 const Register = () => {
+
   return (
     <div >
-      <Container>
+      <Container >
         <Wrapper>
           <Logo >
             <Img src={logo}/>
@@ -36,10 +37,10 @@ const Register = () => {
        </Form>
             </Wrap>
           </FormHold>
-          <Login to="register">
+          <Login to="/register">
             Don't Have an account? Register!
           </Login>
-          <Login to="">
+          <Login to="/">
             Forgot Password?
           </Login>
         </Wrapper>

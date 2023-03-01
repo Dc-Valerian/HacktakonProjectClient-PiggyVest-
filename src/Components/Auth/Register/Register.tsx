@@ -64,7 +64,7 @@ const Register = () => {
        </Form>
             </Wrap>
           </FormHold>
-          <Login to ="login">
+          <Login to ="/login">
             Already have an Account? Log In
           </Login>
         </Wrapper>

@@ -4,12 +4,24 @@ import styled from 'styled-components'
 import logo from "../Assets/logo.svg"
 
 const Header = () => {
+  const [show,setShow] = React.useState(false)
+
+  const changeHeaderColor =()=>{
+    if(window.scrollY >= 1){
+      setShow(true)
+    }else{
+      setShow(false)
+    }
+  }
+
+
+  window.addEventListener("scroll",changeHeaderColor)
   return (
     <div>
-      <Container>
+      <Container boxShadow={show ? "value":""}>
         <Wrapper>
           <Logo to="/">
-            <Img src={logo}/>
+            <Img  src={logo}/>
           </Logo>
 
           <NavLink >
@@ -108,7 +120,7 @@ width: 90%;
 
 `
 
-const Container = styled.div`
+const Container = styled.div<{boxShadow :string}>`
 width: 100%;
 /* background-color: red; */
 height: 90px;
