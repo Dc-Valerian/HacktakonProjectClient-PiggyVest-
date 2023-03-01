@@ -7,6 +7,8 @@ interface props{
     text2:string;
     image:string;
     ButtonText:string;
+    color:string;
+    bcc:string
 }
 
 const CardProps:React.FC<props>= ({
@@ -14,6 +16,8 @@ const CardProps:React.FC<props>= ({
     text2,
     image,
     ButtonText,
+    color,
+    bcc
 }) => {
   return (
     <div>
@@ -26,7 +30,7 @@ const CardProps:React.FC<props>= ({
                 {text2}
             </p>
             <nav>
-                <Icon bc="" cl="">
+                <Icon bc={bcc} cl={color}>
                     <BsArrowRight/>
                 </Icon>
                 <Text>
@@ -70,7 +74,7 @@ width: 320px;
 border-radius: 20px;
 background-color:#F9F9F9;
 padding-left: 30px;
-height: 300px;
+height: 320px;
 margin: 30px;
 cursor: pointer;
 
