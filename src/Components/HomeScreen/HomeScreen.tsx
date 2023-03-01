@@ -4,6 +4,7 @@ import CardProps from '../Build/CardProps'
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import Hero from '../Hero/Hero'
+import Investment from '../Investment/Investment'
 import Priority from '../Priority/Priority'
 
 const HomeScreen = () => {
@@ -13,6 +14,7 @@ const HomeScreen = () => {
         <Hero/>
         <Priority/>
         <Build/>
+        <Investment/>
         <Footer/>
     </div>
   )

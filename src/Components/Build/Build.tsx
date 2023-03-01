@@ -37,24 +37,24 @@ const Build = () => {
                     text2="Lock money away for a fixed duration with no access to it until maturity. It’s like having a custom fixed deposit."
                     ButtonText='Safelock'
                     image={lock}
-                    bcc="#E4F0FD"
-                    color="blue"
+                    bcc="#E7F5FD"
+                    color="#58A9FD"
                     />
                     <CardProps
                     text1='Goal-oriented Savings'
                     text2="Reach all your savings goals faster. Save towards multiple goals on your own or with a group."
-                    ButtonText='PiggyBank'
+                    ButtonText='Target Savings'
                     image={target}
-                    bcc="#E4F0FD"
-                    color="blue"
+                    bcc="#E7FDF0"
+                    color="#34AC62"
                     />
                     <CardProps
                     text1="Flexible Savings"
                     text2="Save, transfer, withdraw, manage and organise your money for free at any time."
-                    ButtonText='PiggyBank'
+                    ButtonText="Flex Naira"
                     image={flex}
-                    bcc="#E4F0FD"
-                    color="blue"
+                    bcc="#FBE9F5"
+                    color="#E850A1"
                     />
                 </Second>
             </Wrapper>
