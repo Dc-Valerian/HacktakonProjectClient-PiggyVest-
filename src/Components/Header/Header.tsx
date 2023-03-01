@@ -18,7 +18,7 @@ const Header = () => {
   window.addEventListener("scroll",changeHeaderColor)
   return (
     <div>
-      <Container boxShadow={show ? "value":""}>
+      <Container boxShadow={show ? "value":""} id="header">
         <Wrapper>
           <Logo to="/">
             <Img  src={logo}/>

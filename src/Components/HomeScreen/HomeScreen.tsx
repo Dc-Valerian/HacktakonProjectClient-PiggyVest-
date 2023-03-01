@@ -1,4 +1,5 @@
 import React from 'react'
+import Build from '../Build/Build'
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import Hero from '../Hero/Hero'
@@ -10,6 +11,7 @@ const HomeScreen = () => {
       <Header/>
         <Hero/>
         <Priority/>
+        <Build/>
         <Footer/>
     </div>
   )
