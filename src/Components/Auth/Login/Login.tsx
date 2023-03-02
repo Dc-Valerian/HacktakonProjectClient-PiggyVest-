@@ -164,7 +164,7 @@ justify-content: center;
 align-items: center;
 background-color: #062863;
 width: 100%;
-height: 100vh;
+height: 100%;
 padding: 10px 0px 10px 0px;
 background-image: url(${blue}),url(${green}),url(${purple}), url(${pink});
 background-repeat: no-repeat;

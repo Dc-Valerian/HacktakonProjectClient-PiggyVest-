@@ -47,22 +47,21 @@ font-weight: 500;
 `
 
 const Line  = styled.div`
-color: #7913E9;
 display: flex;
-width: 300px;
-/* justify-content: center; */
 align-items: center;
-margin: 5px;
-margin-top: 30px;
-font-size: 18px;
-font-weight: 500;
 cursor: pointer;
-
+width: fit-content;
+transition: all 500ms;
+background-image: linear-gradient(
+    transparent 0,
+    transparent 70%,
+    black
+);
+background-position-x: left;
+background-repeat: no-repeat;
+background-size: 0 100%;
 :hover{
-    color: rgb(247,240,255);
-    background-color: transparent;
-    background-color: whitesmoke;
-    transition: all 650ms;
+    background-size: 100% 100%;
 }
 `
 

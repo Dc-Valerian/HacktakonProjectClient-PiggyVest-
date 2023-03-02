@@ -5,6 +5,7 @@ import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import Hero from '../Hero/Hero'
 import Investment from '../Investment/Investment'
+import Meet from '../Meet/Meet'
 import Priority from '../Priority/Priority'
 
 const HomeScreen = () => {
@@ -15,6 +16,7 @@ const HomeScreen = () => {
         <Priority/>
         <Build/>
         <Investment/>
+        <Meet/>
         <Footer/>
     </div>
   )
