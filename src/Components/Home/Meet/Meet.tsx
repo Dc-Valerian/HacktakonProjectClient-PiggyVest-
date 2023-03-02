@@ -28,7 +28,7 @@ const Meet = () => {
                         <Icon>
                             <BsArrowRight/>
                         </Icon>
-                        <a href="">Meet Valerian</a>
+                        <a href="https://github.com/Dc-Valerian">Meet Valerian</a>
                     </Line>
                 </First>
                 <Second>

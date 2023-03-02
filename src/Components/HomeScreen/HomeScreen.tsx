@@ -1,12 +1,12 @@
 import React from 'react'
-import Build from '../Build/Build'
-import CardProps from '../Build/CardProps'
-import Footer from '../Footer/Footer'
-import Header from '../Header/Header'
-import Hero from '../Hero/Hero'
-import Investment from '../Investment/Investment'
-import Meet from '../Meet/Meet'
-import Priority from '../Priority/Priority'
+import Build from '../Home/Build/Build'
+import CardProps from '../Home/Build/CardProps'
+import Footer from '../Home/Footer/Footer'
+import Header from '../Home/Header/Header'
+import Hero from '../Home/Hero/Hero'
+import Investment from '../Home/Investment/Investment'
+import Meet from '../Home/Meet/Meet'
+import Priority from '../Home/Priority/Priority'
 
 const HomeScreen = () => {
   return (
