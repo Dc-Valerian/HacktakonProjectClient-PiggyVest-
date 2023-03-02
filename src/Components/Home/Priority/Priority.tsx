@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {FaGreaterThan} from "react-icons/fa"
-import img from "../Assets/security.png"
+import img from "../../Assets/security.png"
 
 const Priority = () => {
   return (

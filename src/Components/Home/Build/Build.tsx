@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import CardProps from './CardProps'
-import piggy from "../Assets/piggy.png"
-import lock from "../Assets/safelock.png"
-import target from "../Assets/target.png"
-import flex from "../Assets/flex.png"
+import piggy from "../../Assets/piggy.png"
+import lock from "../../Assets/safelock.png"
+import target from "../../Assets/target.png"
+import flex from "../../Assets/flex.png"
 
 
 

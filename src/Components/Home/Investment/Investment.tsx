@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import phone from "../Assets/invest.png"
+import phone from "../../Assets/invest.png"
 import {FaGreaterThan} from "react-icons/fa"
 
 const Investment = () => {

@@ -1,6 +1,7 @@
 import React from 'react'
 import Build from '../Home/Build/Build'
 import CardProps from '../Home/Build/CardProps'
+import Customers from '../Home/Customers/Customers'
 import Footer from '../Home/Footer/Footer'
 import Header from '../Home/Header/Header'
 import Hero from '../Home/Hero/Hero'
@@ -17,6 +18,7 @@ const HomeScreen = () => {
         <Build/>
         <Investment/>
         <Meet/>
+        <Customers/>
         <Footer/>
     </div>
   )

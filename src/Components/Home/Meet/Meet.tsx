@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import image from "../Assets/bro2.jpg"
+import image from "../../Assets/bro2.jpg"
 import {BsArrowRight} from "react-icons/bs"
 
 const Meet = () => {
@@ -28,7 +28,7 @@ const Meet = () => {
                         <Icon>
                             <BsArrowRight/>
                         </Icon>
-                        <a href="https://github.com/Dc-Valerian">Meet Valerian</a>
+                        <a href="https://github.com/Dc-Valerian">Meet Dc Valerian</a>
                     </Line>
                 </First>
                 <Second>
@@ -133,5 +133,5 @@ align-items: center;
 width: 100%;
 /* background-color: #0D60D8; */
 height: 600px;
-margin-bottom: 50px;
+margin-bottom: 30px;
 `
