@@ -121,12 +121,19 @@ justify-content: center;
 align-items: center;
 display: flex;
 font-size: 15px;
-border: 1px solid black;
 font-weight: 500;
 border-radius: 10px;
 cursor: pointer;
 outline: none;
 border: none;
+border: 1px solid black;
+margin-top: 10px;
+transition: all 400ms;
+
+:hover{
+  margin-top: -2px;
+  transform: scale(0.99);
+}
 `
 
 const Button = styled(Link)`
