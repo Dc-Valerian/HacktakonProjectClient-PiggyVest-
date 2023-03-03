@@ -18,6 +18,10 @@ const AllRoutes = () => {
 		{
 			path:"/login",
 			element:<Login/>
+		},
+		{
+			path:"/dashboard",
+			element
 		}
 	]);
 	return element;
