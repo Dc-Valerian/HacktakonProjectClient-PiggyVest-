@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Savings from "../../Savings/Savings";
+import Account from "../Account/Account";
+import Invest from "../Invest/Invest";
 import SideBar from "./SideBar";
 
 const SavingsDashboard = () => {
