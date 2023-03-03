@@ -11,9 +11,9 @@ const Home = () => {
             <Top>
                 <Left>
                     <Bold>
-                        <h1>Okwoli</h1>
+                        <h1>Valerian Pedro</h1>
                     </Bold>
-                    <P><p>wash your hands, it's lunch time 🍛!</p></P>
+                    <P><p>Be The Difference ✨👌!</p></P>
                 </Left>
                 <Right>
                     <Img src={img} />

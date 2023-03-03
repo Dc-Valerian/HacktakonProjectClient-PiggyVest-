@@ -74,12 +74,15 @@ const Home2 = styled(NavLink)`
   width: 100%;
   display: flex;
   margin-top: 45px;
+  text-decoration: none;
 `;
 const Home = styled(NavLink)`
   width: 100%;
   display: flex;
   margin-top: 70px;
+  text-decoration: none;
 `;
+
 const Image = styled.img`
   height: 25px;
   margin-left: 30px;

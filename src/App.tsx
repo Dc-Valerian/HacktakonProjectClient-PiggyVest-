@@ -6,14 +6,12 @@ import Header from './Components/Home/Header/Header';
 import HomeScreen from './Components/HomeScreen/HomeScreen';
 import Footer from './Components/Home/Footer/Footer';
 import AllRoutes from './Components/AllRoutes/AllRoutes';
-import DashBoard from './Components/DashBoardFolder/DashBoard/DashBoard';
 
 function App() {
   return (
     <div>
       {/* <Header/> */}
       <AllRoutes/>
-      <DashBoard/>
       {/* <Footer/> */}
     </div>
   );

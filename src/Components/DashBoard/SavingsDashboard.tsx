@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Savings from "../../savings/Savings";
+import Savings from "../../Savings/Savings";
 import SideBar from "./SideBar";
 
 const SavingsDashboard = () => {
@@ -8,7 +8,7 @@ const SavingsDashboard = () => {
     <div>
       <Container>
         <SideBar />
-        <Savings />
+        <Savings/>
       </Container>
     </div>
   );

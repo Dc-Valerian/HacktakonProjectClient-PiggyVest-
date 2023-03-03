@@ -4,13 +4,25 @@ import {TfiReload} from "react-icons/tfi"
 import img1 from "../Assets/diamond.png"
 import img2 from "../Assets/power.png"
 import img3 from "../Assets/money.png"
+import {CiCircleRemove} from "react-icons/ci"
+
 
 const Cards = () => {
+    const [show,setShow]  = React.useState(false)
+
+    const Cancel =()=>{
+        setShow(false)
+    }
+    const Toggle =()=>{
+        setShow(!false)
+    }
   return (
     <Container>
         <Top>
             <Icon><TfiReload /></Icon>
-            <Button>+QUICK SAVE</Button>
+            <Button 
+            onClick={Toggle}
+            >+QUICK SAVE</Button>
         </Top>
         <Boxhold>
             <Card>
@@ -35,11 +47,47 @@ const Cards = () => {
                 </Text>
             </Card3>
         </Boxhold>
+
+      
+      {
+        show ?(
+            <Save>
+                <Holder onClick={Cancel}>
+                        <Icons>
+                            <CiCircleRemove/>
+                        </Icons>
+                </Holder>
+            </Save>
+        ):null
+      }
     </Container>
   )
 }
 
 export default Cards
+const Icons = styled.div`
+    font-size: 50px;
+    cursor: pointer;
+`
+const Holder = styled.div`
+    width: 30%;
+    display: flex;
+    height: 100%;
+    background-color: #fff;
+`
+const Save = styled.div`
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    left: 0;
+    top: 0;
+    right: 0;
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
+`
+
 const Text = styled.div`
     display: flex;
     flex-direction: column;
@@ -120,6 +168,7 @@ const Button = styled.div`
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     background-color: #0d60d8;
+    cursor: pointer;
 `
 const Icon = styled.div`
     font-weight: bold;
