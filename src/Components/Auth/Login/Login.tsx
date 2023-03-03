@@ -31,13 +31,15 @@ const Register = () => {
        <h5>Email Address</h5>
        <Input type="text"  placeholder='Email Address'/>
        </FormList>
+       <Butt to="/dashboard">
        <Button>
         Log IN
        </Button>
+       </Butt>
        </Form>
             </Wrap>
           </FormHold>
-          <Login to="/register">
+          <Login to="/">
             Don't Have an account? Register!
           </Login>
           <Login to="/">
@@ -56,6 +58,7 @@ margin-top: 20px;
 color: white;
 text-decoration: none;
 `
+const Butt = styled(Link)``
 
 const Button = styled.button`
 background-color:#062B6F;

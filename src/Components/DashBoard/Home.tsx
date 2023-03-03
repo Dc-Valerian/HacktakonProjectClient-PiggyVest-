@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import img from "../Assets/person.png"
 import Cards from './Cards'
 import Todo from './Todo'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -16,7 +17,9 @@ const Home = () => {
                     <P><p>Be The Difference ✨👌!</p></P>
                 </Left>
                 <Right>
-                    <Img src={img} />
+                  <Icon to="/account">
+                  <Img src={img} />
+                  </Icon>
                 </Right>
             </Top>
             <Cards />
@@ -27,6 +30,7 @@ const Home = () => {
 }
 
 export default Home
+const Icon = styled(Link)``
 const Img = styled.img`
     height: 45px;
 `

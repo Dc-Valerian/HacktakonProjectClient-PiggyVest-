@@ -1,6 +1,6 @@
 import React from 'react'
-import SideBar from '../DashBoard/SideBar'
-import Account from './Account'
+import SideBar from './SideBar'
+import Account from '../Account/Account'
 
 const Accountdashboard = () => {
   return (

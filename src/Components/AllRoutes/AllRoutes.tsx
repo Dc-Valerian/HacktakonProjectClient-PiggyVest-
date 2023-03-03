@@ -1,14 +1,14 @@
 import React from "react";
 import { useRoutes } from "react-router-dom";
 import Account from "../Account/Account";
-import Accountdashboard from "../Account/Accountdashboard";
+import Accountdashboard from "../DashBoard/Accountdashboard";
 import Login from "../Auth/Login/Login";
 import Register from "../Auth/Register/Register";
 import Dashboard from "../DashBoard/Dashboard";
 import SavingsDashboard from "../DashBoard/SavingsDashboard";
 import HomeScreen from "../HomeScreen/HomeScreen";
 import Invest from "../Invest/Invest";
-import Investdashboard from "../Invest/Investdashboard";
+import Investdashboard from "../DashBoard/Investdashboard";
 
 
 const AllRoutes = () => {

@@ -8,6 +8,46 @@ import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 const SideBar = () => {
+    const [menu, setMenu] = React.useState(false);
+    const menuSidebar = () => {
+      setMenu(!menu);
+      setAccount(true);
+      setInvest(true);
+      setAccount(true);
+      setSavings(true);
+      setHome(true);
+    }; // menu bar
+  
+    // menu Route functions 👇👇
+    const [home, setHome] = React.useState(true);
+    const homeRoute = () => {
+      setHome(false);
+      setInvest(true);
+      setAccount(true);
+      setSavings(true);
+    }; // menu bar
+    const [savings, setSavings] = React.useState(true);
+    const savingsRoute = () => {
+      setSavings(false);
+      setInvest(true);
+      setAccount(true);
+      setHome(true);
+    }; // menu bar
+    const [invest, setInvest] = React.useState(true);
+    const investRoute = () => {
+      setInvest(false);
+      setSavings(true);
+      setAccount(true);
+      setHome(true);
+    }; // menu bar
+    const [account, setAccount] = React.useState(true);
+    const accountRoute = () => {
+      setAccount(false);
+      setSavings(true);
+      setInvest(true);
+      setHome(true);
+    }; // menu bar
+  
   return (
     <Container>
         <Top>
@@ -25,7 +65,7 @@ const SideBar = () => {
                     borderTopLeftRadius: isActive ? "10px" : "none",
                     borderTopRightRadius: isActive ? "10px" : "none",
                     borderBottomRightRadius:isActive ? "10px" : "none",
-                    Color: isActive ? "#2d3748" : "#fff",
+                    color: isActive ? "#2d3748" : "#fff",
                     marginLeft: isActive ? "15px" : "none"
                 }
             }}>
@@ -41,7 +81,7 @@ const SideBar = () => {
                     borderTopLeftRadius: isActive ? "10px" : "none",
                     borderTopRightRadius: isActive ? "10px" : "none",
                     borderBottomRightRadius:isActive ? "10px" : "none",
-                    Color: isActive ? "#2d3748" : "#fff",
+                    color: isActive ? "#2d3748" : "#fff",
                     marginLeft: isActive ? "15px" : "none"
                 }
             }}>
@@ -57,7 +97,7 @@ const SideBar = () => {
                     borderTopLeftRadius: isActive ? "10px" : "none",
                     borderTopRightRadius: isActive ? "10px" : "none",
                     borderBottomRightRadius:isActive ? "10px" : "none",
-                    Color: isActive ? "#2d3748" : "#fff",
+                    color: isActive ? "#2d3748" : "#fff",
                     marginLeft: isActive ? "15px" : "none"
                 }
             }}>
@@ -73,7 +113,7 @@ const SideBar = () => {
                     borderTopLeftRadius: isActive ? "10px" : "none",
                     borderTopRightRadius: isActive ? "10px" : "none",
                     borderBottomRightRadius:isActive ? "10px" : "none",
-                    Color: isActive ? "#2d3748" : "#fff",
+                    color: isActive ? "#2d3748" : "#fff",
                     marginLeft: isActive ? "15px" : "none"
                 }
             }}>
@@ -100,7 +140,7 @@ const Text4 = styled.div`
     font-size: 17px;
     font-family: U8,sans-serif;
     cursor: pointer;
-    color: #fff;
+    /* color: #fff; */
     align-items: center;
     display: flex;
     margin-left: 30px;
@@ -112,7 +152,7 @@ const Text3 = styled.div`
     font-size: 17px;
     font-family: U8,sans-serif;
     cursor: pointer;
-    color: #fff;
+    /* color: #fff; */
     align-items: center;
     display: flex;
     margin-left: 30px;
@@ -124,7 +164,7 @@ const Text2 = styled.div`
     font-size: 17px;
     font-family: U8,sans-serif;
     cursor: pointer;
-    color: #fff;
+    /* color: #fff; */
     align-items: center;
     display: flex;
     margin-left: 30px;

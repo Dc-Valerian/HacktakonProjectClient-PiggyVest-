@@ -32,42 +32,42 @@ const Savings = () => {
             h1="Piggybank"
             p="Strict savings automatically. Daily, weekly or Monthly. 10% p.a"
             naira="₦0.00"
-            bg="rgb(204, 240, 254)"
+            bg="#CCF0FE"
             icn=""
           />
           <CardProps
             h1="Flex Naira"
             p="Flexible savings for emergencies. Free transfers, withdrawals etc. 8% p.a"
             naira="₦0.00"
-            bg="rgb(231, 67, 156)"
+            bg="#FFEAF5"
             icn=""
           />
           <CardProps
             h1="Safelock"
             p="Lock funds to avoid temptations. Upfront interest. Up to 13% p.a"
             naira="₦0.00"
-            bg="rgb(231, 246, 255)"
+            bg="#E7F6FF"
             icn=""
           />
           <CardProps
             h1="Targets"
             p="Reach your unique individual saving goals. 9% p.a"
             naira="₦0.00"
-            bg="rgb(220, 255, 235)"
+            bg="#DCFFEB"
             icn=""
           />
           <CardProps
             h1="Flex Dollar"
             p="Save & grow your wealth in dollars. Up to 7% p.a in dollars"
             naira="₦0.00"
-            bg="rgb(239, 244, 245)"
+            bg="#EFF4F5"
             icn=""
           />
           <CardProps
             h1="PocketApp"
             p="Withdraw your savings to your pocket faster ⚡️"
             naira="₦0.00"
-            bg="rgb(241, 236, 254)"
+            bg="#F1ECFE"
             icn=""
           />
         </Bottom>

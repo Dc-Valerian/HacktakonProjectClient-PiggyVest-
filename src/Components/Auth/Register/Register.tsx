@@ -58,9 +58,11 @@ const Register = () => {
           <option>others</option>
         </select>
        </FormList>
-       <Button>
+      <Butt to="/dashboard">
+      <Button>
         Create Account
        </Button>
+      </Butt>
        </Form>
             </Wrap>
           </FormHold>
@@ -79,6 +81,9 @@ cursor: pointer;
 margin-top: 20px;
 color: white;
 text-decoration: none;
+`
+const Butt = styled(Link)`
+  
 `
 
 const Button = styled.button`
