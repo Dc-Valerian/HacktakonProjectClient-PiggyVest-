@@ -1,16 +1,55 @@
 import React from 'react'
 import styled from 'styled-components'
 import logo from "../../Assets/logo-white.svg"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import green from "../../Assets/green.png"
 import pink from "../../Assets/pink.png"
 import purple from "../../Assets/purple.png"
 import blue from "../../Assets/blue.png"
+import { User } from '../../Global/ReduxState'
+import axios from 'axios'
+import { UseAppDispatch } from '../../Global/Store'
+import * as yup from "yup"
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from 'react-hook-form'
+import { useMutation } from '@tanstack/react-query'
+
+
 
 const localUrl = "http://localhost:6400";
 
 const Register = () => {
-  
+  const dispatch = UseAppDispatch();
+  const navigate = useNavigate();
+  const schema = yup.object({
+    name:yup.string().required("Name is a Required Field"),
+    email:yup.string().required("Please Enter Your Valid Email Address").email(),
+    userName:yup.string().required("This is a required Field"),
+    phoneNumber:yup.number().required("Field Must be required"),
+    password:yup.string().min(5).required("Please enter a password"),
+    confirmpassword:yup.string().oneOf([yup.ref("password")]).required(),
+  }).required()
+
+  type formData = yup.InferType<typeof schema>;
+
+  const {
+    handleSubmit,
+    formState:{errors},
+    reset,
+    register,
+  }=useForm<formData>({
+    resolver:yupResolver(schema),
+  });
+
+  const posting = useMutation({
+    mutationKey:["created"],
+    mutationFn:createUser,
+
+    onSuccess:(myData)=>{
+      dispatch(User(myData.data));
+      navigate("/dashboard")
+    }
+  })
   return (
     <div>
       <Container id='register'>
@@ -27,6 +66,10 @@ const Register = () => {
        <FormList>
        <h5>Full Name</h5>
        <Input type="text"  placeholder='Full Name'/>
+       </FormList>
+       <FormList>
+       <h5>userName</h5>
+       <Input type="text"  placeholder='userName'/>
        </FormList>
        <FormList>
        <h5>Email Address</h5>
@@ -60,11 +103,11 @@ const Register = () => {
           <option>others</option>
         </select>
        </FormList>
-      <Butt to="/dashboard">
-      <Button>
+      {/* <Butt to="/dashboard"> */}
+      <Button type='submit'>
         Create Account
        </Button>
-      </Butt>
+      {/* </Butt> */}
        </Form>
             </Wrap>
           </FormHold>
