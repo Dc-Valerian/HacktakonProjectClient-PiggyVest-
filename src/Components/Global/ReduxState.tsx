@@ -1,4 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
+import { PayloadAction } from '@reduxjs/toolkit/dist/createAction';
 import { UserData } from '../AllInterfaces/AllInterfaces';
 
 const initialState = {

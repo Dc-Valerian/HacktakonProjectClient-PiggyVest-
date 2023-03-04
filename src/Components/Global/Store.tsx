@@ -15,5 +15,23 @@ import {
 } from "redux-persist";
 
 const persistConfig={
-    
+    key:"piggyvestsite",
+    version:1,
+    storage,
 }
+
+const persistedReducer = persistReducer(persistConfig, myReducer);
+
+export const Store = configureStore({
+    reducer:persistedReducer,
+    middleware:(getDefaultMiddleware) => getDefaultMiddleware({
+        serializableCheck:{
+            ignoredActions:[FLUSH,REHYDRATE,PAUSE,PERSIST,PURGE,REGISTER]
+        }
+    })
+})
+
+
+export const UseAppDispatch :()=> typeof Store.dispatch = useDispatch;
+
+export const useAppSelector:TypedUseSelectorHook<ReturnType<typeof Store.getState>> = useSelector;
