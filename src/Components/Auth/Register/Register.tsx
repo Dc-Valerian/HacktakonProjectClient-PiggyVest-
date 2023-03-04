@@ -7,6 +7,7 @@ import pink from "../../Assets/pink.png"
 import purple from "../../Assets/purple.png"
 import blue from "../../Assets/blue.png"
 
+const localUrl = "http://localhost:6400";
 
 const Register = () => {
   
@@ -29,19 +30,19 @@ const Register = () => {
        </FormList>
        <FormList>
        <h5>Email Address</h5>
-       <Input type="text"  placeholder='Email Address'/>
+       <Input type="text"  placeholder='Put in Your Valid Email Address'/>
        </FormList>
        <FormList>
        <h5>Phone Number</h5>
-       <Input type="text"  placeholder='Phone Number'/>
+       <Input type="text"  placeholder='Input Your Phone Number'/>
        </FormList>
        <FormList>
        <h5>Password</h5>
-       <Input type="password"  placeholder='Password' />
+       <Input type="password"  placeholder='Enter Your Password' />
        </FormList>
        <FormList>
        <h5>Confirm Passwords</h5>
-       <Input type="text"  placeholder='Referrer Phone or Promo Code'/>
+       <Input type="text"  placeholder='Please Confirm Your Password'/>
        </FormList>
        <FormList>
         <h5>How Did You Hear About Us?(Optional)</h5>
