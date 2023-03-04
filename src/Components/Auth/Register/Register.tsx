@@ -13,7 +13,7 @@ import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from 'react-hook-form'
 import { useMutation } from '@tanstack/react-query'
-
+import { createUser } from '../../ApiCalls/ApiCall'
 
 
 const localUrl = "http://localhost:6400";
@@ -49,6 +49,10 @@ const Register = () => {
       dispatch(User(myData.data));
       navigate("/dashboard")
     }
+  });
+
+  const Submit = handleSubmit(async(data)=>{
+    posting.mutate(data);
   })
   return (
     <div>
@@ -65,27 +69,49 @@ const Register = () => {
        <Form>
        <FormList>
        <h5>Full Name</h5>
-       <Input type="text"  placeholder='Full Name'/>
+       <Input {...register("name")} type="text"  placeholder='Full Name'/>
+       <p>{errors?.name && errors?.name?.message}</p>
        </FormList>
        <FormList>
        <h5>userName</h5>
-       <Input type="text"  placeholder='userName'/>
+       <Input {...register("userName")} type="text"  placeholder='userName'/>
+       <p>
+        {errors?.userName && errors?.userName?.message}
+       </p>
        </FormList>
        <FormList>
        <h5>Email Address</h5>
-       <Input type="text"  placeholder='Put in Your Valid Email Address'/>
+       <Input {...register("email")} type="text"  placeholder='Put in Your Valid Email Address'/>
+       <p>
+        {errors?.email && errors?.email?.message}
+       </p>
        </FormList>
        <FormList>
        <h5>Phone Number</h5>
-       <Input type="text"  placeholder='Input Your Phone Number'/>
+       <Input {...register("phoneNumber")} type="text"  placeholder='Input Your Phone Number'/>
+       <p>
+        {
+          errors?.phoneNumber && errors?.phoneNumber?.message
+        }
+       </p>
        </FormList>
        <FormList>
        <h5>Password</h5>
-       <Input type="password"  placeholder='Enter Your Password' />
+       <Input {...register("password")} type="password"  placeholder='Enter Your Password' />
+       <p>
+        {
+          errors?.password && errors?.password?.message
+        }
+       </p>
        </FormList>
        <FormList>
        <h5>Confirm Passwords</h5>
-       <Input type="text"  placeholder='Please Confirm Your Password'/>
+       <Input {...register("confirmpassword")} type="text"  placeholder='Please Confirm Your Password'/>
+       <p>
+        {
+          errors?.confirmpassword && errors?.confirmpassword?.message
+        }
+       </p>
        </FormList>
        <FormList>
         <h5>How Did You Hear About Us?(Optional)</h5>
