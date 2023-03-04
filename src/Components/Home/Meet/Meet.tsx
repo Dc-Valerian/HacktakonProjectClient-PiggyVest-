@@ -10,18 +10,18 @@ const Meet = () => {
             <Wrapper>
                 <First>
                     <span>
-                    Meet the saver of 
+                    Meet the Developer of 
                     <br />
                     the month!
                     </span>
                     <p>
-                    Every month, we shine a spotlight on one saver, asking 
+                    At Codelab we aim at building young underserved youths,
                     <br />
-                     them questions about their savings culture and how 
+                     give them a soft skill  that they
                      <br />
-                     the product is specifically helping them shape how they spend 
+                    will use for the benefit of their local  community 
                      <br />
-                     and save for future responsibilities.
+                    and across the global.
                     </p>
 
                     <Line>
