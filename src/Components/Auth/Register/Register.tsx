@@ -9,6 +9,7 @@ import blue from "../../Assets/blue.png"
 
 
 const Register = () => {
+  
   return (
     <div>
       <Container id='register'>
@@ -39,7 +40,7 @@ const Register = () => {
        <Input type="password"  placeholder='Password' />
        </FormList>
        <FormList>
-       <h5>Referrer Phone or Promo Code(Optional)</h5>
+       <h5>Confirm Passwords</h5>
        <Input type="text"  placeholder='Referrer Phone or Promo Code'/>
        </FormList>
        <FormList>
