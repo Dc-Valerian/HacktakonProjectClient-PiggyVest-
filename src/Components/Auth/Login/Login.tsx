@@ -52,7 +52,7 @@ const Register = () => {
        </FormList>
        <FormList>
        <h5>Password</h5>
-       <Input {...register("password")} type="text"  placeholder='Please Enter the valid registered number'/>
+       <Input {...register("password")} type="password"  placeholder='Please Enter the valid registered number'/>
        <p>
         {
           errors?.password && errors?.password?.message

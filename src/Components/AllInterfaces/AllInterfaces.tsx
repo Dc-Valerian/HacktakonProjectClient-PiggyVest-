@@ -4,11 +4,8 @@ export interface UserData {
 	userName: string;
 	password: string;
 	phoneNumber: number;
-	accountNumber: number;
-	verified: boolean;
-	isAdmin: boolean;
 	wallet: {}[];
-	history: {}[];
+	_id:string;
 }
 
 export interface WalletData {
@@ -32,7 +29,7 @@ export interface HistoryData {
 export interface Quick {
 	amount: number;
 	autoSave: boolean;
-	dateTime: string;
+	dateTime: string | string;
 	interest: number;
 }
 

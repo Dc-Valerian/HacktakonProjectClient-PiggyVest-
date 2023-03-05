@@ -5,10 +5,36 @@ import img1 from "../Assets/diamond.png"
 import img2 from "../Assets/power.png"
 import img3 from "../Assets/money.png"
 import {CiCircleRemove} from "react-icons/ci"
+import { useAppSelector } from '../Global/Store'
+import * as yup from "yup"
+import { type } from 'os'
+import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import { useMutation } from '@tanstack/react-query'
+import { TransferMoney } from '../ApiCalls/ApiCall'
+import Swal from 'sweetalert2'
 
 
 const Cards = () => {
+    const user = useAppSelector((state)=>state.currentUser)
     const [show,setShow]  = React.useState(false)
+    const [cancle,setCancle] = React.useState(false)
+
+    const schema = yup.object({
+        accountNumber:yup.number().required("field must be filled"),
+        amount:yup.number().required("field must be filled"),
+    }).required();
+
+    type formData = yup.InferType<typeof schema>;
+
+    const {
+        handleSubmit,
+        formState:{errors},
+        reset,
+        register,
+    } = useForm<formData>({
+        resolver:yupResolver(schema)
+    })
 
     const Cancel =()=>{
         setShow(false)
@@ -16,6 +42,21 @@ const Cards = () => {
     const Toggle =()=>{
         setShow(!false)
     }
+
+    const posting = useMutation({
+        mutationFn:(data)=>{
+            return TransferMoney(data,user?._id)
+        },
+        onSuccess:(data)=>{
+            Swal.fire({
+                title:"Transfer Success",
+                icon:"success"
+            })
+        }
+    })
+
+    const onSubmit = handleSubmit(async)
+
   return (
     <Container>
         <Top>

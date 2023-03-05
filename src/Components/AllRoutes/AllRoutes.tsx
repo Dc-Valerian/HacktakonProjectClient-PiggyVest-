@@ -5,10 +5,15 @@ import Accountdashboard from "../DashBoard/Accountdashboard";
 import Login from "../Auth/Login/Login";
 import Register from "../Auth/Register/Register";
 import Dashboard from "../DashBoard/Dashboard";
-import SavingsDashboard from "../DashBoard/SavingsDashboard";
+// import SavingsDashboard from "../DashBoard/SavingsDashboard";
 import HomeScreen from "../HomeScreen/HomeScreen";
 import Invest from "../Invest/Invest";
 import Investdashboard from "../DashBoard/Investdashboard";
+import Savings from "../SavingsDashboard/Savings";
+import Piggybank from "../SavingsDashboard/Piggybank";
+import Flex from "../SavingsDashboard/Flex";
+import Safelock from "../SavingsDashboard/Safelock";
+import Target from "../SavingsDashboard/Target";
 
 
 const AllRoutes = () => {
@@ -31,15 +36,29 @@ const AllRoutes = () => {
 		},
 		{
 			path:"/savings",
-			element:<SavingsDashboard/>
-		},
-		{
-			path:"/invest",
-			element:<Investdashboard/>
-		},
-		{
-			path:"/account",
-			element:<Accountdashboard/>
+			children:[
+				{
+					index:true,
+					element:<Savings/>
+				},
+				{
+					path:"/savings/piggybank",
+					element:<Piggybank/>
+				},
+				{
+					path:"/savings/flex",
+					element:<Flex/>
+				},
+				{
+					path:"savings/safelock",
+					element:<Safelock/>
+				},
+				{
+					path:"/savings/target",
+					element:<Target/>
+				}
+
+			]
 		}
 	]);
 	return element;

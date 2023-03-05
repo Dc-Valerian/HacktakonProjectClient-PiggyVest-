@@ -21,6 +21,6 @@ export const GetOneUser = async (id:any)=>{
     return await axios.get(`${localUrl}/api/user/${id}/userdetail`).then((res)=>res.data)
 }
 
-export const TransferMoney = async (data:any,id:any)=>{
+export const TransferMoney = async ( data: any, id: any)=>{
     return await axios.post(`${localUrl}/api/user/sendmoney/${id}`,data).then((res)=>res.data)
 }
