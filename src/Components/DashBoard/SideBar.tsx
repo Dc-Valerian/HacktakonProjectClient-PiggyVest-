@@ -6,8 +6,12 @@ import {ImHome2} from "react-icons/im"
 import {IoIosRocket, IoMdPerson} from "react-icons/io"
 import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import { UseAppDispatch } from '../Global/Store'
+import { logout } from '../Global/ReduxState'
 
 const SideBar = () => {
+  const dispatch = UseAppDispatch();
+    
     const [menu, setMenu] = React.useState(false);
     const menuSidebar = () => {
       setMenu(!menu);
@@ -123,8 +127,13 @@ const SideBar = () => {
 
         <Power>
             <Icon2><FiPower /></Icon2>
-            <Text>Logout</Text>
+          <Link to="/">
+          <Text  onClick={()=>{
+                dispatch(logout)
+            }}>Logout</Text>
+          </Link>
         </Power>
+    
     </Container>
   )
 }
@@ -133,7 +142,7 @@ export default SideBar
 const Power = styled.div`
     width: 100%;
     display: flex;
-    margin-top: 150px;  
+    margin-top: 90px;  
     align-items: center;
 `
 const Text4 = styled.div`

@@ -16,7 +16,7 @@ import { useMutation } from '@tanstack/react-query'
 import { createUser } from '../../ApiCalls/ApiCall'
 
 
-const localUrl = "http://localhost:6400";
+// const localUrl = "http://localhost:6400";
 
 const Register = () => {
   const dispatch = UseAppDispatch();
@@ -53,6 +53,7 @@ const Register = () => {
 
   const Submit = handleSubmit(async(data)=>{
     posting.mutate(data);
+    reset()
   })
   return (
     <div>
@@ -66,7 +67,7 @@ const Register = () => {
             <Wrap>
             <h2>Create a Secure Account</h2>
             <p>Welcome to the future of Savings & Investments</p>
-       <Form>
+       <Form onSubmit={Submit}>
        <FormList>
        <h5>Full Name</h5>
        <Input {...register("name")} type="text"  placeholder='Full Name'/>

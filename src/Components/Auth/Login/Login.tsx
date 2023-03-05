@@ -6,9 +6,27 @@ import green from "../../Assets/green.png"
 import pink from "../../Assets/pink.png"
 import purple from "../../Assets/purple.png"
 import blue from "../../Assets/blue.png"
+import * as yup from "yup"
+import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import { NavLink } from 'react-router-dom'
 
 
 const Register = () => {
+  const schema = yup.object({
+    email:yup.string().email().required("Email Field must be required"),
+    password:yup.string().min(9).required()
+  }).required();
+
+  type formData = yup.InferType<typeof schema>
+
+  const{handleSubmit ,formState:{errors},reset,register} = useForm<formData>({
+    resolver:yupResolver(schema)
+  })
+
+  const Submit = handleSubmit(()=>{
+    reset()
+  })
 
   return (
     <div >
@@ -22,27 +40,41 @@ const Register = () => {
             <Wrap>
             <h2>Login to Your Account</h2>
             <p>Securely login to your PiggyVest</p>
-       <Form>
-       <FormList>
-       <h5>Full Name</h5>
-       <Input type="text"  placeholder='Full Name'/>
-       </FormList>
+       <Form onSubmit={Submit}>
        <FormList>
        <h5>Email Address</h5>
-       <Input type="text"  placeholder='Email Address'/>
+       <Input {...register("email")} type="text"  placeholder='Email Address'/>
+       <p>
+        {
+          errors?.email && errors?.email?.message
+        }
+       </p>
        </FormList>
-       <Butt to="/dashboard">
-       <Button>
+       <FormList>
+       <h5>Password</h5>
+       <Input {...register("password")} type="text"  placeholder='Please Enter the valid registered number'/>
+       <p>
+        {
+          errors?.password && errors?.password?.message
+        }
+       </p>
+       </FormList>
+       {/* <Butt to="/dashboard"> */}
+     <NavLink to="/dashboard">
+     <Button type='submit'>
         Log IN
        </Button>
-       </Butt>
+     </NavLink>
+       {/* </Butt> */}
        </Form>
             </Wrap>
           </FormHold>
-          <Login to="/">
+        <NavLink to="/register" style={{textDecoration:"none"}}>
+        <Login>
             Don't Have an account? Register!
           </Login>
-          <Login to="/">
+        </NavLink>
+          <Login>
             Forgot Password?
           </Login>
         </Wrapper>
@@ -52,7 +84,7 @@ const Register = () => {
 }
 
 export default Register
-const Login = styled(Link)`
+const Login = styled.div`
 cursor: pointer;
 margin-top: 20px;
 color: white;

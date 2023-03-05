@@ -19,7 +19,11 @@ const Cards = () => {
   return (
     <Container>
         <Top>
-            <Icon><TfiReload /></Icon>
+            <Icon
+            onClick={()=>{
+                window.location.reload()
+            }}
+            ><TfiReload /></Icon>
             <Button 
             onClick={Toggle}
             >+QUICK SAVE</Button>
@@ -172,6 +176,7 @@ const Button = styled.div`
 `
 const Icon = styled.div`
     font-weight: bold;
+    cursor: pointer;
 `
 const Container = styled.div`
     width: 100%;

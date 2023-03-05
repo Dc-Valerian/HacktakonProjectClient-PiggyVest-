@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import img from "../Assets/person.png";
-import CardProps from "../../Savings/CardProps"
+import CardProps from "../SavingsDashboard/CardProps"
 // import Cards from "./Cards";
 // import Todo from "./Todo";
 import { BsFillShieldFill } from "react-icons/bs";
