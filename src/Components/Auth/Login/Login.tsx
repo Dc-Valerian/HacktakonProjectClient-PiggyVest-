@@ -10,9 +10,12 @@ import * as yup from "yup"
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { NavLink } from 'react-router-dom'
+import Swal from 'sweetalert2'
+import { useAppSelector } from '../../Global/Store'
 
 
 const Register = () => {
+  const user = useAppSelector((state)=>state.currentUser)
   const schema = yup.object({
     email:yup.string().email().required("Email Field must be required"),
     password:yup.string().min(9).required()
@@ -25,6 +28,10 @@ const Register = () => {
   })
 
   const Submit = handleSubmit(()=>{
+   Swal.fire({
+    title:`Welcome back ${user?.name} `,
+    icon:"success"
+   })
     reset()
   })
 
