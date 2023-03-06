@@ -107,7 +107,7 @@ const Register = () => {
        </FormList>
        <FormList>
        <h5>Confirm Passwords</h5>
-       <Input {...register("confirmpassword")} type="text"  placeholder='Please Confirm Your Password'/>
+       <Input {...register("confirmpassword")} type="password"  placeholder='Please Confirm Your Password'/>
        <p>
         {
           errors?.confirmpassword && errors?.confirmpassword?.message

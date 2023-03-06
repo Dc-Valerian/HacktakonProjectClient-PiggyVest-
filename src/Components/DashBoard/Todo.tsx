@@ -1,7 +1,11 @@
 import React from 'react'
 import styled from "styled-components"
 import {FiThumbsUp, FiLock} from "react-icons/fi"
-import img from "../Assets/pigi.png"
+// import img from "../Assets/pigi.png"
+import img from "../Assets/piggy.png"
+import img2 from "../Assets/complete.jpg"
+import img3 from "../Assets/apps.png"
+import img4 from "../Assets/goog.png"
 
 const Todo = () => {
   return (
@@ -63,11 +67,61 @@ const Todo = () => {
             </Card4>
             <View><h3>VIEW MORE ACTIVITIES</h3></View>
         </Left>
+        <Right>
+            <Comp><p>COMPLETE YOUR SETUP</p></Comp>
+            <Hold>
+                <Image src={img2} />
+            </Hold>
+            <Comp><p>Download the mobile App</p></Comp>
+            <Hold>
+                <Imghold>
+                    <Image2 src={img3} />
+                    <Image3 src={img4} />
+                </Imghold>
+            </Hold>
+        </Right>
     </Container>
   )
 }
 
 export default Todo
+const Image3 = styled.img`
+    height: 43px;
+`
+const Image2 = styled.img`
+    height: 43px;
+`
+const Imghold = styled.div`
+    display: flex;
+    justify-content: space-between;
+`
+const Hold = styled.div`
+    overflow: hidden;
+    border-radius: 6px;
+    width: 330px;
+    height: 120px;
+    margin-bottom: 12px;
+`
+const Image = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+`
+const Comp = styled.div`
+    /* margin-left: 30px; */
+    p{
+        color: #2d3748;
+        font-family: U8,sans-serif;
+        font-size: 13px;
+    }
+`
+const Right = styled.div`
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding-left: 50px;
+`
 const View = styled.div`
     h3{
         color: #5a5add;
@@ -255,11 +309,12 @@ const Top = styled.div`
     }
 `
 const Left = styled.div`
-    width: 60%;
+    width: 75%;
     display: flex;
     flex-direction: column;
 `
 const Container = styled.div`
     width: 100%;
     display: flex;
+    margin-top: 20px;
 `

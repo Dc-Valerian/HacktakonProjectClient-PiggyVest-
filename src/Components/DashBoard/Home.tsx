@@ -6,6 +6,7 @@ import Todo from './Todo'
 import { Link } from 'react-router-dom'
 import { useAppSelector } from '../Global/Store'
 import { useQuery } from '@tanstack/react-query'
+import { GetOneUser } from '../ApiCalls/ApiCall'
 
 const Home = () => {
     const user = useAppSelector((state)=>state.currentUser);
@@ -13,8 +14,12 @@ const Home = () => {
     console.log(user);
 
     const fetchUser = useQuery({
-        queryKey:{}
+        queryKey:["user"],
+        queryFn:()=>GetOneUser(user?._id)
     })
+
+    console.log(fetchUser);
+    
     
   return (
     <Container>
@@ -22,7 +27,9 @@ const Home = () => {
             <Top>
                 <Left>
                     <Bold>
-                        <h1>Valerian Pedro</h1>
+                        <h1>
+                            {user?.userName?.toUpperCase()}
+                        </h1>
                     </Bold>
                     <P><p>Be The Difference ✨👌!</p></P>
                 </Left>
