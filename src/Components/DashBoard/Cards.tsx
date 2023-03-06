@@ -13,7 +13,10 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { useMutation } from '@tanstack/react-query'
 import { TransferMoney } from '../ApiCalls/ApiCall'
 import Swal from 'sweetalert2'
+import axios from 'axios'
+import { AiOutlineClose } from 'react-icons/ai'
 
+const localUrl = "http://localhost:6400"
 
 const Cards = () => {
     const user = useAppSelector((state)=>state.currentUser)
@@ -55,7 +58,21 @@ const Cards = () => {
         }
     })
 
-    const onSubmit = handleSubmit(async)
+    const onSubmit = handleSubmit(async(data)=>{
+        await axios.post(`${localUrl}/api/user/sendmoney/${user?._id}/${user?._id}`,data).then((res)=>{
+            Swal.fire({
+                title:"Successfully Sent",
+                icon:"success"
+            });
+        }).catch((err)=>{
+            Swal.fire({
+                title:"An Error Occurred",
+                icon:"error",
+                text:`${err.response?.data?.message}`,
+            })
+            console.log(err);
+        })
+    })
 
   return (
     <Container>
@@ -97,10 +114,39 @@ const Cards = () => {
       {
         show ?(
             <Save>
-                <Holder onClick={Cancel}>
-                        <Icons>
-                            <CiCircleRemove/>
+                <Holder >
+                        <Icons onClick={Cancel}>
+                            <AiOutlineClose/>
                         </Icons>
+                        <Quick>
+                            <h3>Send Money</h3>
+                            <p>Enter an amount and the Account Number you want to send</p>
+                        </Quick>
+                        <Tap>
+                            <p>Tap here & enter ...(e.g 5000)</p>
+                            <Input
+                            type="number"
+                            {...register("amount")}
+                            placeholder="Tap here & enter..(e.g 5000)"
+                            />
+                        </Tap>
+                        <Tap2>
+                            <p>
+                                Enter Account Number
+                            </p>
+                            <Input2
+                            type="number"
+                            {...register("accountNumber")}
+                            placeholder="Enter the Account Number"
+                            />
+                        </Tap2>
+                        <Proceed
+                        onClick={()=>{
+                            onSubmit()
+                        }}
+                        >
+                            Proceed
+                        </Proceed>
                 </Holder>
             </Save>
         ):null
@@ -110,27 +156,128 @@ const Cards = () => {
 }
 
 export default Cards
+const Proceed = styled.button`
+font-size: 17px;
+	color: #fff;
+	text-align: center;
+	cursor: pointer;
+	font-weight: 700;
+	font-family: U8, sans-serif;
+	margin-top: 160px;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	background-color: #0d60d8;
+	border: none;
+	outline: none;
+	width: 90%;
+	height: 50px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+`
+
+const Tap = styled.div`
+width: 100%;
+display: flex;
+flex-direction: column;
+margin-top: 55px;
+
+p{
+    color: #4a5568;
+    font-weight: 700;
+    font-family: U8,sans-serif;
+    font-size: 15px;
+}
+`
+
+const Tap2 = styled.div`
+width: 100%;
+display: flex;
+flex-direction: column;
+margin-top: 35px;
+
+p{
+    color: #4a5568;
+    font-weight: 700;
+    font-family: U8,sans-serif;
+    font-size: 15px;
+}
+`
+
+const Input = styled.input`
+	width: 88%;
+	height: 45px;
+	color: #1d222b;
+	background-color: #edf2f7;
+	font-size: 100%;
+	border: none;
+	outline: none;
+	padding-left: 15px;
+	border-radius: 5px;
+`
+
+const Input2 = styled.input`
+	width: 88%;
+	height: 45px;
+	color: #1d222b;
+	background-color: #edf2f7;
+	font-size: 100%;
+	border: none;
+	outline: none;
+	padding-left: 15px;
+	border-radius: 5px;
+`
+
+const Quick = styled.div`
+width: 100%;
+display: flex;
+flex-direction: column;
+margin-top: 100px;
+
+p{
+    color:#718096;
+    margin: 0;
+    font-size: 14px;
+}
+h3{
+    font-size: 25px;
+    margin: 0;
+    color:#083e9e ;
+    font-weight: 700;
+    font-family: U8,sans-serif;
+}
+`
+
 const Icons = styled.div`
-    font-size: 50px;
-    cursor: pointer;
+  font-size: 30px;
+	cursor: pointer;
+	position: absolute;
+	top: 15px;
+	right: 15px;
 `
 const Holder = styled.div`
-    width: 30%;
-    display: flex;
-    height: 100%;
-    background-color: #fff;
+   	width: 27%;
+	display: flex;
+	height: 100%;
+	background-color: #fff;
+	flex-direction: column;
+	align-items: center;
+	padding-left: 35px;
 `
 const Save = styled.div`
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.6);
-    left: 0;
-    top: 0;
-    right: 0;
-    position: fixed;
-    display: flex;
-    justify-content: flex-end;
+  	width: 100%;
+	height: 100vh;
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.6);
+	left: 0;
+	top: 0;
+	right: 0;
+	position: fixed;
+	display: flex;
+	justify-content: flex-end;
+	transition-timing-function: ease-in;
+	transition: 1s;
 `
 
 const Text = styled.div`

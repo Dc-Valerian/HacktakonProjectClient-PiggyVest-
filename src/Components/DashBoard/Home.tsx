@@ -4,8 +4,18 @@ import img from "../Assets/person.png"
 import Cards from './Cards'
 import Todo from './Todo'
 import { Link } from 'react-router-dom'
+import { useAppSelector } from '../Global/Store'
+import { useQuery } from '@tanstack/react-query'
 
 const Home = () => {
+    const user = useAppSelector((state)=>state.currentUser);
+
+    console.log(user);
+
+    const fetchUser = useQuery({
+        queryKey:{}
+    })
+    
   return (
     <Container>
         <Wrapper>
