@@ -4,8 +4,8 @@ export interface UserData {
 	userName: string;
 	password: string;
 	phoneNumber: number;
-	wallet: {}[];
-	_id:string;
+	_id: string;
+	wallet: [];
 }
 
 export interface WalletData {
@@ -17,7 +17,6 @@ export interface WalletData {
 	Target: {}[];
 	invest: {}[];
 	myInvestment: [];
-	owner:string;
 }
 
 export interface HistoryData {
@@ -29,7 +28,7 @@ export interface HistoryData {
 export interface Quick {
 	amount: number;
 	autoSave: boolean;
-	dateTime: string | string;
+	dateTime: number | string;
 	interest: number;
 }
 
@@ -68,5 +67,4 @@ export interface InvestorData {
 	investorId: string;
 	amount: number;
 	unit: number;
-	owner:string;
 }

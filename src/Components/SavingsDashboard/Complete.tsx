@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { GetOneUser } from "../ApiCalls/ApiCall";
 import img from "../Assets/complete.jpg";
-import { useAppSelector } from "../Global/Store"
+import { useAppSelector } from "../Global/Stroe";
 
 const Complete = () => {
 	const user = useAppSelector((state) => state.currentUser);

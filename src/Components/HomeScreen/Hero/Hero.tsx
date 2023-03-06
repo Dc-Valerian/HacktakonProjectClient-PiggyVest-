@@ -9,7 +9,7 @@ import {FaGooglePlay} from "react-icons/fa"
 import { Link } from 'react-router-dom'
 import appleIcon from "../../Assets/apple-icon.svg"
 import googleIcon from "../../Assets/google-icon.svg"
-import nice from "../../Assets/nice1.jpg"
+import nice from "../../Assets/girlie.png"
 
 const Hero = () => {
   return (
@@ -211,5 +211,6 @@ display: flex;
 justify-content: center;
 align-items: center;
 width: 100%;
+margin-top: -80px;
 /* background-color: red; */
 `

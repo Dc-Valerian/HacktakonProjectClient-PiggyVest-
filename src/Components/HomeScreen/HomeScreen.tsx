@@ -1,29 +1,28 @@
 import React from 'react'
-import Build from '../Home/Build/Build'
-import CardProps from '../Home/Build/CardProps'
-import Customers from '../Home/Customers/Customers'
-import Featured from '../Home/Featured/Featured'
-import Footer from "../Home/Footer/Footer"
-import Header from '../Home/Header/Header'
-import Hero from '../Home/Hero/Hero'
-import Investment from '../Home/Investment/Investment'
-import Meet from '../Home/Meet/Meet'
-import Priority from '../Home/Priority/Priority'
+import Header from '../Header/Header'
+import Build from './Build/Build'
+import Customers from './Customers/Customers'
+import Hero from './Hero/Hero'
+import Investment from './Investment/Investment'
+import Meet from './Meet/Meet'
+import Priority from './Priority/Priority'
+import Featured from "./Featured/Featured"
+import Footer from './Footer/Footer'
 
-const HomeScreen = () => {
+const Homescreen = () => {
   return (
     <div>
-      <Header/>
-        <Hero/>
-        <Priority/>
-        <Build/>
-        <Investment/>
-        <Meet/>
-        <Customers/>
-        <Featured/>
-        <Footer/>
+        <Header />
+        <Hero />
+        <Priority />
+        <Build />
+        <Investment />
+        <Meet />
+        <Customers />
+        <Featured />
+        <Footer />
     </div>
   )
 }
 
-export default HomeScreen
+export default Homescreen

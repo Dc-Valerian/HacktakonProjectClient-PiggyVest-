@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import image from "../../Assets/bro2.jpg"
+import image from "../../Assets/gig.png"
 import {BsArrowRight} from "react-icons/bs"
 
 const Meet = () => {
@@ -10,18 +10,18 @@ const Meet = () => {
             <Wrapper>
                 <First>
                     <span>
-                    Meet the Developer of 
+                    Meet the saver of 
                     <br />
                     the month!
                     </span>
                     <p>
-                    At Codelab we aim at building young underserved youths,
+                    Every month, we shine a spotlight on one saver, asking 
                     <br />
-                     give them a soft skill  that they
+                     them questions about their savings culture and how 
                      <br />
-                    will use for the benefit of their local  community 
+                     the product is specifically helping them shape how they spend 
                      <br />
-                    and across the global.
+                     and save for future responsibilities.
                     </p>
 
                     <Line>

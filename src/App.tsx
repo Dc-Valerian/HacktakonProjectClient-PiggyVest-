@@ -1,20 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import styled from 'styled-components';
-import Header from './Components/Home/Header/Header';
-import HomeScreen from './Components/HomeScreen/HomeScreen';
-import Footer from './Components/Home/Footer/Footer';
-import AllRoutes from './Components/AllRoutes/AllRoutes';
+import React from 'react'
+import Allroutes from './Components/Allroutes'
+import Dashboard from './Components/DashBoard/Dashboard'
+import SideBar from './Components/DashBoard/SideBar'
+import Login from './Components/Login/Login'
 
-function App() {
+const App = () => {
   return (
     <div>
-      {/* <Header/> */}
-      <AllRoutes/>
-      {/* <Footer/> */}
+      <Allroutes />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

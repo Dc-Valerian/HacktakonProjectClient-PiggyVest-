@@ -5,67 +5,20 @@ import img from "../Assets/piggy.svg"
 import {ImHome2} from "react-icons/im"
 import {IoIosRocket, IoMdPerson} from "react-icons/io"
 import { NavLink } from 'react-router-dom'
-import { Link } from 'react-router-dom'
-import { UseAppDispatch } from '../Global/Store'
-import { logout } from '../Global/ReduxState'
 
 const SideBar = () => {
-  const dispatch = UseAppDispatch();
-    
-    const [menu, setMenu] = React.useState(false);
-    const menuSidebar = () => {
-      setMenu(!menu);
-      setAccount(true);
-      setInvest(true);
-      setAccount(true);
-      setSavings(true);
-      setHome(true);
-    }; // menu bar
-  
-    // menu Route functions 👇👇
-    const [home, setHome] = React.useState(true);
-    const homeRoute = () => {
-      setHome(false);
-      setInvest(true);
-      setAccount(true);
-      setSavings(true);
-    }; // menu bar
-    const [savings, setSavings] = React.useState(true);
-    const savingsRoute = () => {
-      setSavings(false);
-      setInvest(true);
-      setAccount(true);
-      setHome(true);
-    }; // menu bar
-    const [invest, setInvest] = React.useState(true);
-    const investRoute = () => {
-      setInvest(false);
-      setSavings(true);
-      setAccount(true);
-      setHome(true);
-    }; // menu bar
-    const [account, setAccount] = React.useState(true);
-    const accountRoute = () => {
-      setAccount(false);
-      setSavings(true);
-      setInvest(true);
-      setHome(true);
-    }; // menu bar
-  
   return (
     <Container>
         <Top>
             <Icon><FiMenu /></Icon>
-           <Img to="/">
-           <Image src={img} />
-           </Img>
+            <Image src={img} />
         </Top>
         <Home>
             <Icon2><ImHome2 /></Icon2>
             <NavLink to="/dashboard" style={({isActive}) => {
                 return {
                     textDecoration: isActive ? "none" : "none",
-                    backgroundColor: isActive ? "#fff" : "none",
+                    backgroundColor: isActive ? "#fff" : "#062863",
                     borderTopLeftRadius: isActive ? "10px" : "none",
                     borderTopRightRadius: isActive ? "10px" : "none",
                     borderBottomRightRadius:isActive ? "10px" : "none",
@@ -76,12 +29,13 @@ const SideBar = () => {
                 <Text1>Home</Text1>
             </NavLink>
         </Home>
-        <Home >
+        
+            <Home2>
             <Icon2><FiTarget /></Icon2>
             <NavLink to="/savings" style={({isActive}) => {
                 return {
                     textDecoration: isActive ? "none" : "none",
-                    backgroundColor: isActive ? "#fff" : "none",
+                    backgroundColor: isActive ? "#fff" : "#062863",
                     borderTopLeftRadius: isActive ? "10px" : "none",
                     borderTopRightRadius: isActive ? "10px" : "none",
                     borderBottomRightRadius:isActive ? "10px" : "none",
@@ -91,49 +45,21 @@ const SideBar = () => {
             }}>
             <Text2>Savings</Text2>
             </NavLink>
-        </Home>
-        <Home>
+        </Home2>
+        
+        <Home2>
             <Icon2><IoIosRocket /></Icon2>
-            <NavLink to="/invest" style={({isActive}) => {
-                return {
-                    textDecoration: isActive ? "none" : "none",
-                    backgroundColor: isActive ? "#fff" : "none",
-                    borderTopLeftRadius: isActive ? "10px" : "none",
-                    borderTopRightRadius: isActive ? "10px" : "none",
-                    borderBottomRightRadius:isActive ? "10px" : "none",
-                    color: isActive ? "#2d3748" : "#fff",
-                    marginLeft: isActive ? "15px" : "none"
-                }
-            }}>
             <Text3>Invest</Text3>
-            </NavLink>
-        </Home>
-        <Home>
+        </Home2>
+        <Home2>
             <Icon2><IoMdPerson /></Icon2>
-            <NavLink to="/account" style={({isActive}) => {
-                return {
-                    textDecoration: isActive ? "none" : "none",
-                    backgroundColor: isActive ? "#fff" : "none",
-                    borderTopLeftRadius: isActive ? "10px" : "none",
-                    borderTopRightRadius: isActive ? "10px" : "none",
-                    borderBottomRightRadius:isActive ? "10px" : "none",
-                    color: isActive ? "#2d3748" : "#fff",
-                    marginLeft: isActive ? "15px" : "none"
-                }
-            }}>
             <Text4>Account</Text4>
-            </NavLink>
-        </Home>
+        </Home2>
 
         <Power>
             <Icon2><FiPower /></Icon2>
-          <Link to="/">
-          <Text  onClick={()=>{
-                dispatch(logout)
-            }}>Logout</Text>
-          </Link>
+            <Text>Logout</Text>
         </Power>
-    
     </Container>
   )
 }
@@ -142,14 +68,13 @@ export default SideBar
 const Power = styled.div`
     width: 100%;
     display: flex;
-    margin-top: 90px;  
-    align-items: center;
+    margin-top: 195px;  
 `
 const Text4 = styled.div`
     font-size: 17px;
     font-family: U8,sans-serif;
     cursor: pointer;
-    /* color: #fff; */
+    color: #fff;
     align-items: center;
     display: flex;
     margin-left: 30px;
@@ -161,7 +86,7 @@ const Text3 = styled.div`
     font-size: 17px;
     font-family: U8,sans-serif;
     cursor: pointer;
-    /* color: #fff; */
+    color: #fff;
     align-items: center;
     display: flex;
     margin-left: 30px;
@@ -174,6 +99,11 @@ const Text2 = styled.div`
     font-family: U8,sans-serif;
     cursor: pointer;
     /* color: #fff; */
+    align-items: center;
+    display: flex;
+    margin-left: 30px;
+    width: 120px;
+    height: 40px;
     align-items: center;
     display: flex;
     margin-left: 30px;
@@ -192,10 +122,6 @@ const Text = styled.div`
     width: 120px;
     height: 40px;
     /* background-color: white; */
-
-    :hover{
-      color: red;
-    }
 `
 const Text1 = styled.div`
     font-size: 17px;
@@ -217,8 +143,6 @@ const Icon2 = styled.div`
     color: #fff;
     font-size: 23px;
     cursor: pointer;
-
-   
 `
 const Home2 = styled.div`
     width: 100%;
@@ -229,9 +153,6 @@ const Home = styled.div`
     width: 100%;
     display: flex;
     margin-top: 70px;
-`
-const Img = styled(Link)`
-    
 `
 const Image = styled.img`
     height: 25px;

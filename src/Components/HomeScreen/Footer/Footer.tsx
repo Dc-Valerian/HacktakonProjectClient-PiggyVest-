@@ -44,30 +44,20 @@ const Footer = () => {
             <Wrap>
           <IconHold>
           <Icon>
-               <a href="">
-               <FaFacebookSquare/>
-               </a>
+                <FaFacebookSquare/>
               </Icon>
               <Icon>
-               <a href="">
-               <AiFillTwitterSquare/>
-               </a>
+                <AiFillTwitterSquare/>
               </Icon>
               <Icon>
-              <a href="">
-              <FaInstagramSquare/>
-              </a>
+                <FaInstagramSquare/>
               </Icon>
           </IconHold>
           <nav>45,Prince Fadina Street,Olodi Apapa
             <br />
             Lagos,Nigeria
           </nav>
-            <nav>
-              <a href="">
-              valerianpedro03@gmail.com
-              </a>
-            </nav>
+            <nav>valerianpedro03@gmail.com</nav>
             <nav>
               +234 803 717 1484
             </nav>
@@ -96,7 +86,6 @@ export default Footer;
 const Icon = styled.div`
 margin: 3px;
 font-size:40px;
-cursor: pointer;
 `
 
 const IconHold = styled.div`
@@ -160,11 +149,6 @@ width: 80%;
 /* justify-content: center; */
 /* align-items: center; */
 /* font-weight: bold; */
-
-a{
-  text-decoration: none;
-  color: black;
-}
 `
 const Last = styled.div`
 width: 100%;

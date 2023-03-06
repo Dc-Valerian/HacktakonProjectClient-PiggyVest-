@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from "styled-components"
 import {FiThumbsUp, FiLock} from "react-icons/fi"
-// import img from "../Assets/pigi.png"
-import img from "../Assets/piggy.png"
+import img from "../Assets/pigi.png"
 import img2 from "../Assets/complete.jpg"
 import img3 from "../Assets/apps.png"
 import img4 from "../Assets/goog.png"
