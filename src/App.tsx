@@ -1,13 +1,14 @@
 import React from 'react'
-import Allroutes from './Components/Allroutes'
-import Dashboard from './Components/DashBoard/Dashboard'
-import SideBar from './Components/DashBoard/SideBar'
-import Login from './Components/Login/Login'
+import All from "./Components/AllRoutes/Allroutes"
+import Dash from "./Components/AllRoutes/DashboardRoute"
+import DashBoard from './Components/DashBoard/DashBoard'
+
 
 const App = () => {
   return (
     <div>
-      <Allroutes />
+      <All/>
+      <DashBoard/>
     </div>
   )
 }

@@ -1,273 +1,275 @@
 import React from "react";
 import styled from "styled-components";
-import img1 from "../Assets/svg1.png";
-import img2 from "../Assets/svg2.png";
-import img3 from "../Assets/svg3.png";
-import img4 from "../Assets/svg4.png";
-import piggy from "../Assets/piggy.svg";
 import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
+// import { yupResolver } from "@hookform/resolvers/yup";
+// import { UserLogin } from "../Global/ReduxState";
+// import { useAppDispatch } from "../Global/Store";
+// import Swal from "sweetalert2";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useMutation } from "@tanstack/react-query";
-import { createUser } from "../ApiCalls/ApiCall";
-import { UserData } from "../AllInterfaces";
-import { UseAppDispach } from "../Global/Stroe";
-import axios from "axios";
-import { User } from "../Global/ReduxState";
+// import { useQueryClient } from "@tanstack/react-query";
+// import { useMutation } from "@tanstack/react-query";
+// import { UserSignUp } from "../APICALLS/API";
+import accidentSignup from "../Assets/accidentSignup.png";
+// import pic2 from "../Assets/sign6.jpg"
+import wave from "../Assets/wave2.svg"
+import pic from "../Assets/img8.jpeg"
+import logo from "../Assets/logo7.png"
 
-const localUrl = "http://localhost:6400";
-const Create = () => {
-	const dispatch = UseAppDispach();
-	const navigate = useNavigate();
-	const schema = yup
-		.object({
-			name: yup.string().required("field must be required"),
-			userName: yup.string().required("field must be required"),
-			email: yup.string().required("field must be required"),
-			phoneNumber: yup.number().required("field must be required"),
-			password: yup.string().min(9).required(),
-			confirmpassword: yup
-				.string()
-				.oneOf([yup.ref("password")])
-				.required(),
-		})
-		.required();
+const Signup = () => {
+  const navigate = useNavigate();
 
-	type formData = yup.InferType<typeof schema>;
+  // const dispatch = useAppDispatch();
 
-	const {
-		handleSubmit,
-		formState: { errors },
-		reset,
-		register,
-	} = useForm<formData>({
-		resolver: yupResolver(schema),
-	});
+  // const queryclient = useQueryClient();
 
-	const posting = useMutation({
-		mutationKey: ["created"],
-		mutationFn: createUser,
+  // Setting up the schemas for our form using yup validator
+  const Schema = yup.object({
+    name: yup.string().required(),
+    email: yup.string().email().required(),
+    password: yup.string().min(8).required(),
+    confirmPassword: yup
+      .string()
+      .oneOf([yup.ref("password")])
+      .required("Password do not match"),
+    phoneno: yup.number().required("Please enter your phone number"),
+  });
 
-		onSuccess: (myData) => {
-			// console.log("user", myData);
-			dispatch(User(myData.data));
-			navigate("/dashboard");
-		},
-	});
+  type formData = yup.InferType<typeof Schema>;
 
-	const Submit = handleSubmit(async (data) => {
-		posting.mutate(data);
-		// await axios.post(`${localUrl}/api/user/register`, data).then((res) => {
-		// console.log(res);
-		// });
+  // const {
+  //   handleSubmit,
+  //   reset,
+  //   formState: { errors },
+  //   register,
+  // } = useForm<formData>({ resolver: yupResolver(Schema) });
 
-		// reset()
-	});
-	return (
-		<Container>
-			<Image1 src={img1} />
-			<Image2 src={img2} />
-			<Image3 src={img3} />
-			<Image4 src={img4} />
-			<Hold>
-				<Piggy src={piggy} />
-			</Hold>
-			<Card onSubmit={Submit}>
-				<Top>
-					<h1>Create a Secure Account</h1>
-				</Top>
-				<P>
-					<p>Welcome to the future of Savings & Investments</p>
-				</P>
-				<Inputhold>
-					<Email>Full Name</Email>
-					<Input {...register("name")} placeholder='Full Name' type='text' />
-					<p>{errors?.name && errors?.name?.message}</p>
-				</Inputhold>
+  // //   To sign up users:
+  // const UsersSignUp = useMutation({
+  //   mutationKey: ["New Users"],
+  //   mutationFn: UserSignUp,
+  //   onSuccess: (data: any) => {
+  //     dispatch(UserLogin(data.data));
+  //   },
+  // });
 
-				<Inputhold>
-					<Email>username</Email>
-					<Input {...register("userName")} placeholder='username' type='text' />
-					<p>{errors?.userName && errors?.userName?.message}</p>
-				</Inputhold>
-				<Inputhold>
-					<Email>Email</Email>
-					<Input
-						{...register("email")}
-						placeholder='Email Address'
-						type='email'
-					/>
-					<p>{errors?.email && errors?.email?.message}</p>
-				</Inputhold>
-				<Inputhold>
-					<Email>Phone Number</Email>
-					<Input
-						{...register("phoneNumber")}
-						placeholder='Phone Number'
-						type='number'
-					/>
-					<p>{errors?.phoneNumber && errors?.phoneNumber?.message}</p>
-				</Inputhold>
-				<Inputhold>
-					<Email>Password</Email>
-					<Input
-						{...register("password")}
-						placeholder='Password'
-						type='password'
-					/>
-					<p>{errors?.password && errors?.password?.message}</p>
-				</Inputhold>
-				<Inputhold>
-					<Email>Confirm Password</Email>
-					<Input
-						{...register("confirmpassword")}
-						placeholder='Confirm Password'
-						type='password'
-					/>
-					<p>{errors?.confirmpassword && errors?.confirmpassword?.message}</p>
-				</Inputhold>
-				<Button type='submit'>CREATE ACCOUNT</Button>
-			</Card>
-			<NavLink to='/' style={{ textDecoration: "none" }}>
-				<Acc>Already have an account? Log In</Acc>
-			</NavLink>
-		</Container>
-	);
+  // const SignedUpUser = handleSubmit((data: any) => {
+  //   UsersSignUp.mutate(data);
+  //   reset();
+  //   navigate("/user-signin");
+  //   Swal.fire({
+  //     icon: "success",
+  //     title: "User Sign Up Successful",
+  //     //   text: UsersSignUp!.data!.message,
+  //   });
+  // });
+
+  return (
+    <>
+      <Body>
+          {/* <Right>
+            <RightImg src={pic2} />
+          </Right> */}
+          <Left>
+            <Form>
+            <NavLink to="/" style={{textDecoration:"none"}}>
+              <Image>
+              <Img src={logo}/>
+              </Image>
+            </NavLink>
+
+              <Input
+                type="text"
+                placeholder="Full Name"
+                // {...register("name")}
+                // props={errors?.name ? "outline" : ""}
+              />
+              {/* <p>{errors?.name && errors?.name?.message}</p> */}
+
+              <Input
+                type="text"
+                // props={errors?.email ? "outline" : ""}
+                placeholder="Email"
+                // {...register("email")}
+              />
+              {/* <p>{errors?.email && errors?.email?.message}</p> */}
+
+              <Input
+                // props={errors?.password ? "outline" : ""}
+                type="password"
+                placeholder="Password"
+                // {...register("password")}
+              />
+              {/* <p>{errors?.password && errors?.password?.message}</p> */}
+
+              <Input
+                // props={errors?.confirmPassword ? "outline" : ""}
+                type="text"
+                placeholder="Confirm Password"
+                // {...register("confirmPassword")}
+              />
+              <p>
+                {/* {errors?.confirmPassword && errors?.confirmPassword?.message} */}
+              </p>
+
+              <Button type="submit">Sign Up</Button>
+
+                <NavLink to="/login" style={{textDecoration:"none"}}>
+              <Already>Already have an account?
+                Sign in
+              </Already>
+                </NavLink>
+            </Form>
+          </Left>
+      </Body>
+    </>
+  );
 };
 
-export default Create;
+export default Signup;
+const Image = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+`
+
+const Img = styled.img`
+width: 40%;
+object-fit: cover;
+
+`
+
+const Text = styled.div`
+font-size: 20px;
+color:#031e3b;
+font-weight: 700;
+margin-bottom: 20px;
+text-align: center;
+`
+
+// const Body = styled.div``;
+
+// const Body = styled.div``;
+
+const RightImg = styled.img`
+  width: 500px;
+  color: #031e3b;
+  border-radius: 30px;
+`;
+
+const Right = styled.div`
+  width: 50%;
+  /* background-color: red; */
+
+  @media screen and (max-width: 770px) {
+    width: 100%;
+    display: none;
+  }
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    display: none;
+  }
+`;
+
+// const Body = styled.div``;
+
+const Already = styled.div`
+  font-size: 13px;
+  cursor: pointer;
+  color: #031e3b;
+  margin-top: 15px;
+  text-align: center;
+`;
+
 const Button = styled.button`
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 45px;
-	font-size: 0.875rem;
-	color: #fff;
-	font-weight: 700;
-	font-family: U8, sans-serif;
-	background-color: #0d60d8;
-	cursor: pointer;
-	border-radius: 7px;
-	border: none;
-	outline: none;
-	margin-top: 30px;
+  width: 105%;
+  height: 40px;
+  background: #031e3b;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 350ms;
+  :hover {
+    background-color: #031e3b;
+  }
 `;
+
 const Input = styled.input`
-	width: 98%;
-	color: #1a202c;
-	background-color: #edf2f7;
-	height: 45px;
-	border: none;
-	outline: none;
-	padding-left: 10px;
-	margin-top: 5px;
-`;
-const Email = styled.div`
-	font-size: 0.75rem;
-	color: #4a5568;
-	line-height: 2;
-	font-weight: 700;
-	font-family: U8, sans-serif;
-`;
-const Inputhold = styled.div`
-	width: 95%;
-	display: flex;
-	flex-direction: column;
-	margin-top: 30px;
-`;
-const P = styled.div`
-	p {
-		font-size: 0.875rem;
-		color: #4a5568;
-		font-family: Karla, sans-serif;
-		margin: 0;
-	}
-	margin-top: 5px;
-`;
-const Top = styled.div`
-	h1 {
-		font-size: 1.35rem;
-		color: #083e9e;
-		font-weight: 700;
-		font-family: U8, sans-serif;
-		margin: 0;
-	}
-	margin-top: 15px;
-`;
-const Acc = styled.div`
-	font-size: 0.85rem;
-	font-family: Karla, sans-serif;
-	font-weight: 400;
-	color: white;
-	margin-top: 30px;
-	cursor: pointer;
-	:hover {
-		color: #bdbdbd;
-	}
-`;
-const Card = styled.form`
-	width: 380px;
-	height: 960px;
-	background-color: white;
-	margin-top: 30px;
-	border-top-left-radius: 15px;
-	border-top-right-radius: 15px;
-	border-bottom-right-radius: 15px;
-	padding: 40px;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	p {
-		color: red;
-	}
-`;
-const Piggy = styled.img``;
-const Hold = styled.div`
-	display: flex;
-	left: 0;
+  // <{ props: string }>
+  width: 100%;
+  height: 40px;
+  border: none;
+  box-shadow: 0 0 2px #031e3b;
+  margin-bottom: 20px;
+  border-radius: 7px;
+  padding-left: 10px;
+  outline: none;
 `;
 
-const Image4 = styled.img`
-	position: absolute;
-	right: -80px;
-	height: 190px;
-	top: 0;
-	position: fixed;
-`;
-const Image3 = styled.img`
-	position: absolute;
-	left: -80px;
-	height: 190px;
-	bottom: 20px;
-	position: fixed;
-`;
-const Image2 = styled.img`
-	position: absolute;
-	left: -10px;
-	height: 190px;
-	top: -75px;
-	position: fixed;
-`;
-const Image1 = styled.img`
-	position: absolute;
-	right: -60px;
-	height: 190px;
-	bottom: 20px;
-	position: fixed;
+const Form = styled.form`
+  width: 270px;
+  /* background-color: #ffff; */
+  height: 400px;
+  box-shadow: 0 0 3px #031e3b;
+  background-color: white;
+
+
+  border-radius: 20px 0 20px 0;
+  padding: 30px;
+  padding-right: 40px;
+  margin-top: 40px;
+
+  
+  
+  
 `;
 
-const Container = styled.div`
-	width: 100%;
-	flex-direction: column;
-	/* height: 100vh; */
-	background-color: #062863;
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding-top: 50px;
-	padding-bottom: 50px;
-	overflow: hidden;
+const Left = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(3px);
+
+
+  @media screen and (max-width: 770px) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+`;
+
+
+
+
+
+const Body = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(${pic});
+ 
+
+  /* ::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    z-index: -100;
+    bottom: 0;
+    background-image: url(${wave});
+    background-repeat: no-repeat;
+    background-size: cover;
+  } */
+  // background-size: cover;
 `;

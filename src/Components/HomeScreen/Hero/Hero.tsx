@@ -1,216 +1,327 @@
-import React from 'react'
-import styled from 'styled-components'
-import one from "../../Assets/one.png"
-import two from "../../Assets/two.png"
-import three from "../../Assets/three.png"
-import four from "../../Assets/four.png"
-import {AiFillApple} from "react-icons/ai"
-import {FaGooglePlay} from "react-icons/fa"
-import { Link } from 'react-router-dom'
-import appleIcon from "../../Assets/apple-icon.svg"
-import googleIcon from "../../Assets/google-icon.svg"
-import nice from "../../Assets/girlie.png"
+// import React from "react";
+// import styled from "styled-components";
+// import { AiOutlineSearch } from "react-icons/ai";
+// import axios from "axios";
+// import vid from "../../Assets/pexels-tima-miroshnichenko-7579941.mp4"
+
+// interface MyData {
+// 	_id: string;
+// 	author: string;
+// 	authorImage: string;
+// 	category: string;
+// 	coverImage: string;
+// 	title: string;
+// 	views: string[];
+// }
+
+
+// const Hero = () => {
+
+	
+
+// 	return (
+// 		<Container>
+// 			<Video
+// 				// controls
+// 				autoPlay
+// 				loop
+// 				playsInline
+// 				muted
+// 				src={vid}
+// 			/>
+
+// 			<Content>
+		
+
+// 				<h2>
+// 					{" "}
+//           Financial Security Assured <br />
+            
+// 				</h2>
+// 				<p>
+// 					{/* Millions of designers and agencies around the world showcase their
+// 					portfolio work on Dribbble - the home to the world’s best design and
+// 					creative professionals. */}
+//             Watch.. grow.. be secured
+// 				</p>
+
+		
+// 			</Content>
+// 		</Container>
+// 	);
+// };
+
+// export default Hero;
+
+// const Input = styled.input`
+// 	background-color: transparent;
+// 	border: none;
+// 	outline: none;
+// 	flex: 1;
+// `;
+
+// const InputHold = styled.div`
+// 	display: flex;
+// 	align-items: center;
+// 	height: 50px;
+// 	width: 350px;
+// 	background-color: white;
+// 	color: black;
+// 	border-radius: 25px;
+// 	@media screen and (max-width: 500px) {
+// 		width: 280px;
+// 	}
+// `;
+// const Icon = styled.div`
+// 	margin-left: 10px;
+// 	margin-right: 10px;
+// 	font-size: 20px;
+// `;
+
+// const ButtonHold = styled.div`
+// 	margin-top: 50px;
+// 	display: flex;
+// 	overflow-x: scroll;
+// 	justify-content: center;
+// 	align-items: center;
+// 	width: 100%;
+// 	::-webkit-scrollbar {
+// 		width: 0;
+// 	}
+// 	@media screen and (max-width: 768px) {
+// 		justify-content: flex-start;
+// 		align-items: flex-start;
+// 	}
+// `;
+
+// const Content = styled.div`
+// 	position: absolute;
+// 	height: 100%;
+// 	width: 100%;
+// 	display: flex;
+// 	justify-content: center;
+// 	flex-direction: column;
+// 	align-items: center;
+// 	text-align: center;
+// 	h2 {
+// 		font-size: 40px;
+// 		margin: 0;
+// 		margin-top: 30px;
+// 	}
+// 	p {
+// 		width: 700px;
+// 		@media screen and (min-width: 330px) and (max-width: 600px) {
+// 			width: 320px;
+// 		}
+// 		@media screen and (max-width: 320px) {
+// 			width: 280px;
+// 		}
+// 	}
+// `;
+
+// const Video = styled.video`
+// 	height: 80vh;
+// 	width: 100%;
+// 	object-fit: cover;
+// `;
+// const Container = styled.div`
+// 	height: 500px;
+// 	width: 100%;
+// 	position: relative;
+//   top: 50px;
+// 	display: flex;
+// 	justify-content: center;
+// 	color: white;
+// 	::before {
+// 		content: "";
+// 		background-color: rgba(0, 0, 0, 0.737);
+// 		position: absolute;
+// 		height: 80vh;
+// 		width: 100%;
+// 	}
+// `;
+
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import phone from "../../Assets/hero.jpg";
+import { AiOutlineRight } from "react-icons/ai";
 
 const Hero = () => {
   return (
     <div>
-      <Container id='hero'>
+      <Container>
         <Wrapper>
-          <First>
-            <Title>
-            The Better Way  <br /> to Save & Invest.
-            </Title>
-            <Sub>
-            PiggyVest helps over 4 million customers achieve their financial
-            <br />
-             goals by helping them save and invest with ease.
-            </Sub>
-            <Button to ="register">
-              Create Free Account
-            </Button>
-            <ButtonHold>
-              <Buttons>
-                <Icon>
-                  <img src={appleIcon}/>
-                </Icon>
-                Get on iPhone
-              </Buttons>
-              <Buttons>
-                <Icon>
-                  <img src={googleIcon}/>
-                </Icon>
-                Get on Android
-              </Buttons>
-            </ButtonHold>
-          </First>
-          <Second>
-           <One src={nice}/>
-           <Two src={two}/>
-           <Three src={three}/>
-           <Four src={four}/>
-          </Second>
+          <Right>
+            <H3> Let's Start Alajo Savings Today!!</H3>
+            <H1>
+          A Smart Solution for Traditional Savings and Credit        
+            </H1>
+            {/* <P>
+            Alajo makes saving easier.Made for traders, merchants, fast-growing businesses <br /> and anyone looking for a smarter and better way to save.
+            </P> */}
+
+            <Btn>
+              <button>Get started Now</button>
+
+              <Icons>
+                <Text>Learn More</Text>
+                {/* <Icon>
+                  <AiOutlineRight />
+                </Icon> */}
+              </Icons>
+            </Btn>
+          </Right>
+          <Left>
+            <Img src={phone}/>
+          </Left>
         </Wrapper>
       </Container>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
+
+const Text = styled.div`
+display: flex;
+align-items: center;
+cursor: pointer;
+width: fit-content;
+transition: all 500ms;
+background-image: linear-gradient(
+    transparent 0,
+    transparent 70%,
+    whitesmoke
+);
+background-position-x: left;
+background-repeat: no-repeat;
+background-size: 0 100%;
+:hover{
+    background-size: 100% 100%;
+}
+`;
 const Icon = styled.div`
-margin: 5px;
-height: 20px;
-font-size: 30px;
-justify-content: center;
-display: flex;
-align-items: center;
-color: black;
-`
+  margin-top: 3px;
+  margin-left: 5px;
+`;
+const Icons = styled.div`
+  display: flex;
+`;
+const Right = styled.div`
+  width: 50%;
+  /* margin-top: 30px; */
+  padding: 20px;
+  color: #fff;
+  /* background-color: red; */
 
-const Second = styled.div`
-position: relative;
-/* background-color: red; */
-width: 40%;
-height: 700px;
-display: flex;
-align-items: center;
-justify-content: center;
-`
-const Four = styled.img`
-position: absolute;
-z-index: 2;
-object-fit: cover;
-height: 80px;
-width: 250px;
-left: -150px;
-top: 250px;
-`
+  h3 {
+    margin: 0;
+  }
 
-const Three = styled.img`
-position: absolute;
-height: 90px;
-width: 250px;
-z-index: 2;
-object-fit: cover;
-right:9%;
-bottom: 20%;
-`
+  @media screen and (max-width: 770px) {
+    width: 90%;
+  }
+`;
 
-const Two = styled.img`
-position: absolute;
-/* z-index: 3; */
-`
-
-const One = styled.img`
-position: absolute;
-left: 2px;
-z-index: 1;
-width: 68%;
-height: 78%;
-object-fit: cover;
-border-radius: 20px;
-
-`
-
-const Buttons = styled.div`
-margin: 5px;
-height: 50px;
-width:180px;
-background-color: white;
-color: black;
-justify-content: center;
-align-items: center;
-display: flex;
-font-size: 15px;
-font-weight: 500;
-border-radius: 10px;
-cursor: pointer;
-outline: none;
-border: none;
-border: 1px solid black;
-margin-top: 10px;
-transition: all 400ms;
-
-:hover{
-  margin-top: -2px;
-  transform: scale(0.99);
-}
-`
-
-const Button = styled(Link)`
-margin: 5px;
-height: 50px;
-width:220px ;
-background-color: #0C1825;
-color: white;
-display: flex;
-align-items: center;
-justify-content: center;
-border-radius: 10px;
-outline: none;
-border: none;
-font-size: 20px;
-text-decoration: none;
-font-weight:500;
-cursor: pointer;
-transition: all 400ms;
-border: 1px solid black;
+const H1 = styled.div`
+  line-height: 1.1;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 200;
 
 
-:hover{
-  background-color: #0D5ED4;
-  border: 1px solid blue;
-  color: white;
-  transform: scale(0.98);
-}
-`
+  /* span{
+    text-align: center;
+  margin-left: 80px;
+  } */
 
-const ButtonHold = styled.div`
-display: flex;
-margin: 5px;
+  @media screen and (max-width: 350px) {
+    font-weight: 500;
+    font-size: 30px;
+  }
+`;
+const H3 = styled.div`
+  font-size: 20px;
+  margin-bottom: 20px;
 
-
-`
-
-const Sub = styled.div`
-color: #5A3535;
-margin: 15px;
-font-family: "DM Sans";
+  font-weight: 700;
+line-height: 74px;
+color:white;
+background-color: rgba(0,0,0,0);
+font-size: 70px;
 vertical-align: baseline;
-text-decoration: none solid rgb(53,53,53);
-font-weight: 500;
-color: rgb(53,53,53);
+text-align: start;
+font-style: normal;
+`;
+
+const P = styled.div`
+  margin: 0;
+  margin-bottom: 10px;
+`;
+
+const Img = styled.img`
+  height: 100%;
+  width:100%;
+  object-fit: cover;
+  border-radius: 30px;
 `
 
-const Img = styled.img``
+const Left = styled.div`
+  /* margin-top: 30px; */
+  width: 28%;
 
-const Title = styled.div`
-font-size: 4.6em;
-font-weight: 800;
-line-height: 70px;
-color:rgb(12,24,37);
-`
+  margin-right: 60px;
 
+  @media screen and (max-width: 770px) {
+    width: 70%;
+  }
+ 
+`;
 
-const First = styled.div`
-display: flex;
-flex-direction: column;
-`
+const Btn = styled.div`
+  margin-top: 20px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+
+  button {
+    width: 170px;
+    height: 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #063971;
+    margin-right: 20px;
+
+    :hover {
+      scale: 0.97;
+      cursor: pointer;
+      transition: all 350ms;
+      background-color: #063971;
+      border: 1px solid white;
+      color: #fff;
+    }
+  }
+`;
 
 const Wrapper = styled.div`
-/* background-color: navajowhite; */
-display: flex;
-align-items: center;
-justify-content: space-between;
-width:90% ;
-height: 100%;
-margin-top: 90px;
-`
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+  @media screen and (max-width: 760px) {
+    flex-wrap: wrap;
+  }
+`;
 const Container = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-width: 100%;
-margin-top: -80px;
-/* background-color: red; */
-`
+  width: 100%;
+  height:700px;
+  display: flex;
+  /* justify-content: center; */
+  /* align-content: center; */
+  background-color: #031e3b;
+  border-bottom-right-radius: 300px;
+  /* margin-top: 20px; */
+`;

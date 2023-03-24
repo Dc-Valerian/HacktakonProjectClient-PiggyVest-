@@ -1,163 +1,194 @@
-import React, {useState} from 'react'
-import styled from 'styled-components';
-import { BsArrowUpSquare, BsBoxArrowDown } from "react-icons/bs";
-// import { Link } from 'react-scroll';
-import { Link } from 'react-router-dom';
-import logo from "../../Assets/logo.svg"
-import footer from "../../Assets/footer.webp"
-import {FaFacebookSquare,FaInstagramSquare} from "react-icons/fa"
-import {AiFillTwitterSquare} from "react-icons/ai"
+import React from 'react'
+import styled from 'styled-components'
+import images from "../../Assets/logo7.png"
+
+
+import {BsTwitter, BsLinkedin, BsGithub, BsYoutube, BsTwitch} from "react-icons/bs"
+import { NavLink } from 'react-router-dom'
 
 const Footer = () => {
-        return (
+  return (
     <Container>
         <Wrapper>
-            <Wrap>
-                <nav>
-                  <Logo src={logo}/>
-                </nav>
-                <nav>
-                  <Image src={footer}/>
-                </nav>
-              
-            </Wrap>
-            <Wrap>
-              <Head>Products</Head>
-              <nav>Piggybank</nav>
-            <nav>Invest</nav>
-            <nav>Safelock</nav>
-            <nav>Target Savings</nav>
-            <nav>Flex Naira</nav>
-            </Wrap>
-            <Wrap>
-               <Head>Company</Head>
-               <nav>About</nav>
-            <nav>FAQs</nav>
-            <nav>Blog</nav>
-            </Wrap>
-            <Wrap>
-               <Head>Legal</Head>
-               <nav>Terms</nav>
-            <nav>Privacy</nav>
-            <nav>Security</nav>
-            </Wrap>
-            <Wrap>
-          <IconHold>
-          <Icon>
-                <FaFacebookSquare/>
-              </Icon>
-              <Icon>
-                <AiFillTwitterSquare/>
-              </Icon>
-              <Icon>
-                <FaInstagramSquare/>
-              </Icon>
-          </IconHold>
-          <nav>45,Prince Fadina Street,Olodi Apapa
-            <br />
-            Lagos,Nigeria
-          </nav>
-            <nav>valerianpedro03@gmail.com</nav>
-            <nav>
-              +234 803 717 1484
-            </nav>
-         
-            </Wrap>
-          
-         
+            <Left>
+                <Images src={images} />
+                <Down>© 2023 Alajo,Inc.</Down>
+            </Left>
+            <Right>
+                <Start>
+                    <Bold>Product</Bold>
+                    <Navs>Savings</Navs>
+                    <Navs>School Fees</Navs>
+                    <Navs>Daily Svings</Navs>
+                    <Navs>Daily Contributions</Navs>
+                    <Navs>Alajo Online</Navs>  
+                    <Navs>Local Market</Navs>
+                    <Navs>Enterprise</Navs>
+            
+                </Start>
+                <Start>
+                    <Up>
+                        <Bold>Company</Bold>
+                    <Navs>Valerian Adimike</Navs>
+                    <Navs>Jaji Yusuf</Navs>
+                    <Navs>Judith Chinecherem </Navs>
+                    </Up>
+                    <Dow>
+                        <Bold>Security and terms</Bold>
+                    <Navs>Trust and Security</Navs>
+                    <Navs>Privacy policy</Navs>
+                    <Navs>Terms & Conditions</Navs>
+                    </Dow>
+                </Start>
+                <Start>
+                    <Bold>Social</Bold>
+                   <NavLink to="https://github.com/Dc-Valerian" style={{textDecoration:"none"}}>
+                    <Navs><Icons><BsGithub /></Icons>GitHub</Navs>
+                   </NavLink>
+                    <Navs><Icons><BsLinkedin /></Icons>LinkedIn</Navs>
+                    <Navs><Iconss><BsGithub /></Iconss>FaceBook</Navs>
+                    <Navs><Iconsss><BsYoutube /></Iconsss>YouTube</Navs>
+                    <Navs><Iconssss><BsTwitch /></Iconssss>Twitch</Navs>
+                </Start>
+            </Right>
         </Wrapper>
-        <Last>
-        <p>
-        Piggyvest (formerly piggybank.ng) is the leading online savings & investing platform in Nigeria. For over 6 years, our  
-        
-          <br />
-      
-      { " "}  customers have saved and invested billions of Naira that they would normally be tempted to spend.
-        </p>
-        </Last>
-         <ArrowToTop to="header" >
-             <BsArrowUpSquare />
-             {/* <BsBoxArrowDown /> */}
-        </ArrowToTop> 
     </Container>
   )
 }
-export default Footer;
-const Icon = styled.div`
-margin: 3px;
-font-size:40px;
+
+export default Footer
+const Iconssss = styled.div`
+    color: #9146FF;
+    margin-right: 7px;
+    margin-top: 2px;
 `
-
-const IconHold = styled.div`
-display: flex;
+const Iconsss = styled.div`
+    color: #FF0000;
+    margin-right: 7px;
+    margin-top: 2px;
 `
-
-const Head = styled.div`
-display: flex;
-
-`
-
-const Image = styled.img`
-height:70%;
-width: 70%;
-object-fit: cover;
-`
-
-const Logo = styled.img``
-
-const ArrowToTop = styled(Link)`
+const Iconss = styled.div`
     color: black;
-    position: fixed;
-    right: 60px;
-    font-size: 40px;
-    bottom: 25px;
+    margin-right: 7px;
+    margin-top: 2px;
+`
+const Icons = styled.div`
+    color: #0A66C2;
+    margin-right: 7px;
+    margin-top: 2px;
+`
+const Icon = styled.div`
+    color: #1DA1F2;
+    margin-right: 7px;
+    margin-top: 2px;
+`
+const Dow = styled.div`
+    width: 100%;
+    height: 35%;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+`
+const Up = styled.div`
+    width: 100%;
+    height: 65%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 33px;
+`
+const Navs = styled.div`
+    font-size: 15px;
+    display: flex;
+    line-height: 24px;
+    align-items: center;
+    font-weight: 400;
+    color: rgb(107, 107, 107);
+    margin-bottom: 7px;
     cursor: pointer;
-    transition: all 350ms;
     :hover{
-        transform: scale(1.10);
+        color:#063971;
     }
-`;
-
-const Container = styled.div`
-width: 100%;
-padding-top: 30px;
-flex-wrap: wrap;
-/* background-color: skyblue; */
-position: relative;
-margin-bottom: 100px;
+`
+const Bold = styled.h2`
+    font-size: 18px;
+    line-height: 1.28;
+    letter-spacing: -0.12px;
+    color: rgb(78, 78, 78);
+    margin: 0;
+    font-weight: 600;
+    padding-bottom: 10px;
+`
+const Start = styled.div`
+    height: 100%;
+    width: 185px;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    /* margin-right: 40px; */
+    @media screen and (max-width: 410px){
+        margin-bottom: 15px;
+    }
+`
+const Right = styled.div`
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: green; */
+    justify-content: space-between;
+    @media screen and (max-width: 774px){
+        width: 100%;
+    }
+`
+const Down = styled.div`
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 400;
+    color: rgb(166, 166, 166);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 60px;
+    margin-top: -20px;
+`
+const Images = styled.img`
+    height: 200px;
+    
+`
+const Left = styled.div`
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 150px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    @media screen and (max-width: 774px){
+        display: none;
+    }
 `
 const Wrapper = styled.div`
-display: grid;
-grid-template-columns: repeat(6, 3fr);
-justify-content:center;
-/* align-items: center; */
-/* background-color: red; */
-margin-left: 30px;
-/* width: 100%; */
-
-nav{
-    color: black;
-    font-size: 18px;
-    margin: 10px;
-
-
-}
+    width: 90%;
+    display: flex;
+    height: 100%;
+    flex-wrap: wrap;
 `
-const Wrap = styled.div`
-width: 80%;
-/* display: flex; */
-/* justify-content: center; */
-/* align-items: center; */
-/* font-weight: bold; */
+
+const Container = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 110px;
+
+    @media screen and (max-width:500px) {
+    margin-top: -30%;
+      background-color:aquamarine;
+    }
+    @media screen and (max-width:768px) {
+      margin-top: 200px;
+    }
+    /* margin-bottom: 10px; */
+    /* background-color: aliceblue; */
 `
-const Last = styled.div`
-width: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
-margin-top: 20px;
-/* background-color: #0000ff40; */
-height: 40px;
-line-height: 25px;
-text-align: center;
-` 

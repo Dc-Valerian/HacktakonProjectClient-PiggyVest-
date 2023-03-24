@@ -7,19 +7,23 @@ import Investment from './Investment/Investment'
 import Meet from './Meet/Meet'
 import Priority from './Priority/Priority'
 import Featured from "./Featured/Featured"
+import Better from "./Better/Better"
 import Footer from './Footer/Footer'
+import LastCom from './LastCom/LastCom'
 
 const Homescreen = () => {
   return (
     <div>
         <Header />
         <Hero />
-        <Priority />
+        {/* <Priority /> */}
+        <Better/>
         <Build />
-        <Investment />
-        <Meet />
-        <Customers />
-        <Featured />
+        <LastCom/>
+        {/* <Investment /> */}  
+        {/* <Meet /> */}
+        {/* <Customers /> */}
+        {/* <Featured /> */}
         <Footer />
     </div>
   )

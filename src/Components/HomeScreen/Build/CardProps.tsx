@@ -48,6 +48,23 @@ const Text = styled.div`
 color: #484848;
 margin-left: 10px;
 font-weight: 500;
+
+display: flex;
+align-items: center;
+cursor: pointer;
+width: fit-content;
+transition: all 500ms;
+background-image: linear-gradient(
+    transparent 0,
+    transparent 70%,
+    #04386F
+);
+background-position-x: left;
+background-repeat: no-repeat;
+background-size: 0 100%;
+:hover{
+    background-size: 100% 100%;
+}
 `
 
 const Icon = styled.div<{bc:string ;cl:string}>`
@@ -59,6 +76,20 @@ background-color: ${(props)=>props.bc};
 justify-content: center;
 align-items: center;
 border-radius: 50%;
+
+cursor: pointer;
+transition: all 500ms;
+background-image: linear-gradient(
+    transparent 0,
+    transparent 70%,
+    #04386F
+);
+background-position-x: left;
+background-repeat: no-repeat;
+background-size: 0 100%;
+:hover{
+    background-size: 100% 100%;
+}
 `
 
 const Image = styled.img`
@@ -73,7 +104,7 @@ flex-direction: column;
 width: 320px;
 border-radius: 20px;
 background-color:#F9F9F9;
-padding-left: 30px;
+padding-left: 20px;
 height: 320px;
 margin: 30px;
 cursor: pointer;
@@ -94,5 +125,15 @@ nav{
         transform: scale(0.98);
     }
  }
+
+ @media screen and (max-width: 500px) {
+    width: 280px;
+    height:350px;   
+ }
+
+ /* @media screen and (max-width: 500px) {
+    width: 250px;
+    height:350px;   
+ } */
 
 `

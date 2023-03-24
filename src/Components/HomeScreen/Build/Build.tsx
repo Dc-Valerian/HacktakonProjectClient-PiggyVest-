@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import CardProps from './CardProps'
 import piggy from "../../Assets/piggy.png"
 import lock from "../../Assets/safelock.png"
@@ -21,7 +21,9 @@ const Build = () => {
                     <p>
                     Earn 5%-15% when you save with any <br /> of these PiggyVest plans.
                     </p>
-                    <Button to="/">Start Saving</Button>
+                  <NavLink to="/signup">
+                  <Button >Start Saving</Button>
+                  </NavLink>
                 </First>
                 <Second>
                     <CardProps
@@ -64,32 +66,25 @@ const Build = () => {
 }
 
 export default Build
-const Button = styled(Link)`
-margin: 5px;
-height: 50px;
-width:150px;
-background-color: #0C1825;
-color: white;
-display: flex;
-align-items: center;
-justify-content: center;
-border-radius: 10px;
-outline: none;
-border: none;
-font-size: 20px;
-text-decoration: none;
-font-weight:500;
-cursor: pointer;
-transition: all 400ms;
-border: 1px solid black;
+const Button = styled.button`
+  width: 170px;
+    height: 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    margin-right: 20px;
+    background-color: #031e3b;
 
-
-:hover{
-  background-color: #0D5ED4;
-  border: 1px solid blue;
-  color: white;
-  transform: scale(0.98);
-}
+    :hover {
+      scale: 0.97;
+      cursor: pointer;
+      transition: all 350ms;
+      background-color: #fff;
+      border: 1px solid #063971;
+      color: #063971;
+    }
 `
 
 const Second = styled.div`
@@ -99,21 +94,59 @@ padding-bottom: 10px;
 justify-content: flex-end;
 align-items: flex-end;
 width: 70%;
+
+@media screen and (max-width:500px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 `
 
 const First = styled.div`
+@media screen and (max-width:500px) {
+ display: flex;
+ align-items: center;
+ /* justify-content: center; */
+ flex-direction: column;
+}
+
 span{
     font-weight: bold;
     font-size: 35px;
+
+    @media screen and (max-width:500px) {
+        text-align: center;
+        font-size: 28px;
+        font-family: U8-Bold;
+        line-height: 38px;
+        vertical-align: baseline;
+        letter-spacing: normal;
+        word-spacing: 0px;
+        font-style: normal;
+        font-weight: 700;
+    }
 }
 
 p{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     vertical-align: baseline;
-    font-size: 20px;
+    font-size:18px;
     font-weight: 500;
     margin-top: 30px;
     margin-bottom: 30px;
+
+    @media screen and (max-width:500px) {
+        text-align: center;
+        font-family: "DM Sans";
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 27.2px;
+        vertical-align: baseline;
+        letter-spacing: normal;
+        font-style: normal;
+        font-variant: normal;
+
+    }
 }
 `
 
@@ -121,6 +154,20 @@ const Wrapper = styled.div`
 width: 90%;
 display: flex;
 justify-content: space-between;
+
+@media screen and (max-width:500px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+@media screen and (max-width:768px) {
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    grid-template-columns: repeat(2 ,1fr);
+
+}
 `
 
 const Container = styled.div`
@@ -128,6 +175,15 @@ display: flex;
 justify-content: center;
 align-items: center;
 width: 100%;
-margin-top: 80px;
+margin-top: 120px;
 margin-bottom: 20px;
+
+@media screen and (max-width: 500px) {
+    margin-top: 50px;
+}
+
+@media screen and (max-width:768px) {
+    grid-template-columns: repeat(2 ,1fr);
+
+}
 `
